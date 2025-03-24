@@ -153,7 +153,7 @@
   width: 100%;
   height: auto;
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
+  /* box-shadow: var(--shadow-xl); */
 }
 
 .floating-elements {
