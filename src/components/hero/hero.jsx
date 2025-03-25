@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaArrowRight} from 'react-icons/fa';
 import './hero.css';
-import homeScreen from '../../assets/HomeScreen.png';
+import Dashboard from '../../assets/Dashboard.png';
 
 
 
@@ -20,13 +20,25 @@ const Hero = () => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const imageOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Stats animations
-  const statsY = useTransform(scrollYProgress, [0, 1], [0, 50]);
-  const statsOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section className="hero" ref={sectionRef}>
       <div className="hero-container">
+
+        <motion.div 
+          className="hero-image"
+          style={{
+            y: imageY,
+            scale: imageScale,
+            opacity: imageOpacity,
+          }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <img src={Dashboard} alt="Agriculture Technology" />
+          
+        </motion.div>
         <motion.div 
           className="hero-content"
           style={{
@@ -78,48 +90,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div 
-          className="hero-image"
-          style={{
-            y: imageY,
-            scale: imageScale,
-            opacity: imageOpacity,
-          }}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <img src={homeScreen} alt="Agriculture Technology" />
-          
-        </motion.div>
-
-        <motion.div 
-          className="hero-stats"
-          style={{
-            y: statsY,
-            opacity: statsOpacity,
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="stat-item">
-            <span className="stat-number">10K+</span>
-            <span className="stat-label">Active Farmers</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">50K+</span>
-            <span className="stat-label">Acres Covered</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">30%</span>
-            <span className="stat-label">Yield Increase</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-number">100+</span>
-            <span className="stat-label">Partners</span>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   );
