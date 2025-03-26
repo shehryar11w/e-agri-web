@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
-import './footer.css';
 
 const Footer = () => {
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,127 +64,193 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="footer"
+      className="bg-gray-900 dark:bg-gray-950 text-white pt-24 pb-12 relative overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
     >
-      <div className="footer-container">
-        <motion.div className="footer-brand" variants={itemVariants}>
-          <motion.a href="/" className="footer-logo" whileHover={{ scale: 1.05 }}>
-            <img src={logo} alt="E-Agri Logo" />
-            <span>E-Agri</span>
-          </motion.a>
-          <motion.p className="footer-description" variants={itemVariants}>
-            Empowering Pakistani farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.
-          </motion.p>
-          <motion.div className="social-links" variants={itemVariants}>
-            <motion.a href="#" className="social-link" aria-label="Facebook" whileHover="hover" variants={socialLinkVariants}>
-              <FaFacebookF />
-            </motion.a>
-            <motion.a href="#" className="social-link" aria-label="Twitter" whileHover="hover" variants={socialLinkVariants}>
-              <FaTwitter />
-            </motion.a>
-            <motion.a href="#" className="social-link" aria-label="Instagram" whileHover="hover" variants={socialLinkVariants}>
-              <FaInstagram />
-            </motion.a>
-            <motion.a href="#" className="social-link" aria-label="LinkedIn" whileHover="hover" variants={socialLinkVariants}>
-              <FaLinkedinIn />
-            </motion.a>
-          </motion.div>
-        </motion.div>
+      {/* Top border gradient */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-emerald-700 dark:from-emerald-400 dark:to-emerald-600" />
+      
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(46,204,113,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(52,211,153,0.1),transparent_50%)] pointer-events-none" />
 
-        <motion.div className="footer-section" variants={itemVariants}>
-          <motion.h3 variants={itemVariants}>Quick Links</motion.h3>
-          <motion.ul className="footer-links">
-            {quickLinks.map((link, index) => (
-              <motion.li key={index} variants={itemVariants}>
-                <motion.a 
-                  href={link.href}
-                  whileHover={{ x: 5 }}
-                >
-                  {link.name}
-                </motion.a>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-
-        <motion.div className="footer-section" variants={itemVariants}>
-          <motion.h3 variants={itemVariants}>Company</motion.h3>
-          <motion.ul className="footer-links">
-            {companyLinks.map((link, index) => (
-              <motion.li key={index} variants={itemVariants}>
-                <motion.a 
-                  href={link.href}
-                  whileHover={{ x: 5 }}
-                >
-                  {link.name}
-                </motion.a>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-
-        <motion.div className="footer-section" variants={itemVariants}>
-          <motion.h3 variants={itemVariants}>Support</motion.h3>
-          <motion.ul className="footer-links">
-            {supportLinks.map((link, index) => (
-              <motion.li key={index} variants={itemVariants}>
-                <motion.a 
-                  href={link.href}
-                  whileHover={{ x: 5 }}
-                >
-                  {link.name}
-                </motion.a>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div>
-
-        <motion.div className="footer-section" variants={itemVariants}>
-          <motion.h3 variants={itemVariants}>Contact Us</motion.h3>
-          <motion.ul className="contact-info">
-            <motion.li variants={itemVariants}>
-              <FaPhone />
-              <span>+92 300 1234567</span>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <FaEnvelope />
-              <span>info@e-agri.pk</span>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <FaMapMarkerAlt />
-              <span>123 Agriculture Street, Islamabad, Pakistan</span>
-            </motion.li>
-          </motion.ul>
-          <motion.div className="newsletter-form" variants={itemVariants}>
-            <motion.input
-              type="email"
-              placeholder="Enter your email"
-              className="newsletter-input"
-              whileFocus={{ scale: 1.02 }}
-            />
-            <motion.button 
-              className="newsletter-button"
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Section */}
+          <motion.div className="max-w-xs" variants={itemVariants}>
+            <motion.a 
+              href="/" 
+              className="flex items-center gap-3 mb-6 text-white hover:scale-105 transition-transform"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
-              Subscribe
-            </motion.button>
+              <img src={logo} alt="E-Agri Logo" className="w-10 h-10 drop-shadow-lg" />
+              <span className="text-xl font-bold bg-gradient-to-r from-white to-emerald-200 dark:from-emerald-200 dark:to-emerald-400 bg-clip-text text-transparent">
+                E-Agri
+              </span>
+            </motion.a>
+            <motion.p className="text-gray-300 dark:text-gray-400 text-base leading-relaxed mb-6" variants={itemVariants}>
+              Empowering Pakistani farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.
+            </motion.p>
+            <motion.div className="flex gap-4" variants={itemVariants}>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 dark:bg-white/5 flex items-center justify-center text-white hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors relative overflow-hidden group"
+                aria-label="Facebook" 
+                whileHover="hover" 
+                variants={socialLinkVariants}
+              >
+                <FaFacebookF className="relative z-10" />
+                <div className="absolute inset-0 bg-emerald-500 dark:bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 dark:bg-white/5 flex items-center justify-center text-white hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors relative overflow-hidden group"
+                aria-label="Twitter" 
+                whileHover="hover" 
+                variants={socialLinkVariants}
+              >
+                <FaTwitter className="relative z-10" />
+                <div className="absolute inset-0 bg-emerald-500 dark:bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 dark:bg-white/5 flex items-center justify-center text-white hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors relative overflow-hidden group"
+                aria-label="Instagram" 
+                whileHover="hover" 
+                variants={socialLinkVariants}
+              >
+                <FaInstagram className="relative z-10" />
+                <div className="absolute inset-0 bg-emerald-500 dark:bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-white/10 dark:bg-white/5 flex items-center justify-center text-white hover:bg-emerald-500 dark:hover:bg-emerald-400 transition-colors relative overflow-hidden group"
+                aria-label="LinkedIn" 
+                whileHover="hover" 
+                variants={socialLinkVariants}
+              >
+                <FaLinkedinIn className="relative z-10" />
+                <div className="absolute inset-0 bg-emerald-500 dark:bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          {/* Quick Links Section */}
+          <motion.div variants={itemVariants}>
+            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
+              Quick Links
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </motion.h3>
+            <motion.ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <motion.li key={index} variants={itemVariants}>
+                  <motion.a 
+                    href={link.href}
+                    className="text-gray-300 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    {link.name}
+                  </motion.a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+
+          {/* Company Section */}
+          <motion.div variants={itemVariants}>
+            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
+              Company
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </motion.h3>
+            <motion.ul className="space-y-3">
+              {companyLinks.map((link, index) => (
+                <motion.li key={index} variants={itemVariants}>
+                  <motion.a 
+                    href={link.href}
+                    className="text-gray-300 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    {link.name}
+                  </motion.a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+
+          {/* Support Section */}
+          <motion.div variants={itemVariants}>
+            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
+              Support
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </motion.h3>
+            <motion.ul className="space-y-3">
+              {supportLinks.map((link, index) => (
+                <motion.li key={index} variants={itemVariants}>
+                  <motion.a 
+                    href={link.href}
+                    className="text-gray-300 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 group"
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    {link.name}
+                  </motion.a>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+
+          {/* Contact Section */}
+          <motion.div variants={itemVariants}>
+            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
+              Contact Us
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </motion.h3>
+            <motion.ul className="space-y-4 mb-6">
+              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
+                <FaPhone className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
+                <span>+92 300 1234567</span>
+              </motion.li>
+              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
+                <FaEnvelope className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
+                <span>info@e-agri.pk</span>
+              </motion.li>
+              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
+                <FaMapMarkerAlt className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
+                <span>123 Agriculture Street, Islamabad, Pakistan</span>
+              </motion.li>
+            </motion.ul>
+            {/* <motion.div className="flex gap-2" variants={itemVariants}>
+              <motion.input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2 rounded-md border border-white/10 dark:border-white/5 bg-white/5 dark:bg-white/[0.02] text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 focus:bg-white/10 dark:focus:bg-white/5 transition-all"
+                whileFocus={{ scale: 1.02 }}
+              />
+              <motion.button 
+                className="px-6 py-2 bg-emerald-500 dark:bg-emerald-400 text-white rounded-md hover:bg-emerald-600 dark:hover:bg-emerald-500 transition-colors relative overflow-hidden group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10 w-full">Subscribe</span>
+                <div className="absolute inset-0 bg-emerald-600 dark:bg-emerald-500 transform -translate-x-full group-hover:translate-x-0 transition-transform" />
+              </motion.button>
+            </motion.div> */}
+          </motion.div>
+        </div>
       </div>
 
       <motion.div 
-        className="footer-bottom"
+        className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 dark:text-gray-500"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        <p>&copy; {new Date().getFullYear()} E-Agri. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} E-Agri. All rights reserved.</p>
       </motion.div>
     </motion.footer>
   );

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaLeaf, FaChartLine, FaTint, FaMobileAlt, FaCloud, FaShieldAlt } from 'react-icons/fa';
-import './features.css';
+import { useTheme } from '../../context/ThemeContext';
 
 const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isDarkMode } = useTheme();
 
   // Handle escape key to close modal
   useEffect(() => {
@@ -121,47 +122,50 @@ const Features = () => {
 
   return (
     <motion.section 
-      className="features"
+      className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden"
       id="features"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      <div className="features-container">
+      {/* Background gradient effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E8F5E9_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,#1B4332_0%,transparent_50%)] opacity-50 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div 
-          className="features-header"
+          className="text-center mb-16"
           variants={itemVariants}
         >
-          <h2 className="features-title">Our Features</h2>
-          <p className="features-description">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Features</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Discover how our platform can transform your farming experience
           </p>
         </motion.div>
 
-        <div className="features-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="feature-card"
+              className="bg-white dark:bg-gray-800 p-8 rounded-2xl text-center shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
+                boxShadow: isDarkMode ? "0 20px 40px rgba(0, 0, 0, 0.3)" : "0 20px 40px rgba(0, 0, 0, 0.1)"
               }}
               onClick={() => openModal(feature)}
             >
               <motion.div 
-                className="feature-icon"
+                className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 rounded-full text-emerald-600 dark:text-emerald-400 text-2xl transition-all duration-300"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
                 {feature.icon}
               </motion.div>
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{feature.description}</p>
               <motion.button 
-                className="feature-button"
+                className="px-6 py-2 border-2 border-emerald-600 text-emerald-600 dark:text-emerald-400 rounded-full font-medium hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={(e) => {
@@ -179,14 +183,14 @@ const Features = () => {
       <AnimatePresence>
         {isModalOpen && selectedFeature && (
           <motion.div 
-            className="modal-overlay"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
           >
             <motion.div 
-              className="modal-content"
+              className="bg-white dark:bg-gray-800 p-8 rounded-2xl max-w-2xl w-[90%] relative shadow-2xl"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -194,21 +198,23 @@ const Features = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <motion.div 
-                className="modal-icon"
+                className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 rounded-full text-emerald-600 dark:text-emerald-400 text-3xl"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
                 {selectedFeature.icon}
               </motion.div>
-              <h3 className="modal-title">{selectedFeature.title}</h3>
-              <p className="modal-description">{selectedFeature.details}</p>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">{selectedFeature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">{selectedFeature.details}</p>
               <motion.button 
-                className="modal-close"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-full transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={closeModal}
               >
-                Close
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
               </motion.button>
             </motion.div>
           </motion.div>
