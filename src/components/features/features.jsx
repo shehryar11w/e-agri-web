@@ -1,12 +1,170 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaLeaf, FaChartLine, FaTint, FaMobileAlt, FaCloud, FaShieldAlt } from 'react-icons/fa';
+import { FaCloud, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
+
+
+import ELoan from '../../assets/mockups/E-Loan.png';
+
+import EMundi from '../../assets/modulesLogos/market.png';
+import EAdvisor from '../../assets/modulesLogos/AI.png';
+import EMarket from '../../assets/modulesLogos/market.png';
+import EWarehouse from '../../assets/modulesLogos/warehouse.png';
+import EPlantDoctor from '../../assets/modulesLogos/PlantDr.png';
+import EAuction from '../../assets/modulesLogos/money.png';
+import EOrders from '../../assets/modulesLogos/orders.png';
+import ERental from '../../assets/modulesLogos/tractor.png';
+import ETransport from '../../assets/modulesLogos/truck.png';
+import EFoodSupply from '../../assets/modulesLogos/A.png';
+import EMunshi from '../../assets/modulesLogos/register.png';
+import ESettlements from '../../assets/modulesLogos/deal.png';
+import EAnimalFeed from '../../assets/modulesLogos/feed.png';
+
 
 const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { isDarkMode } = useTheme();
+
+  const MockupFeatures = [
+    {
+      icon: EAdvisor,
+      title: "E-Advisor",
+      description: "AI-powered agricultural intelligence",
+      details: "Our E-Advisor system leverages advanced AI to provide personalized farming recommendations. Get real-time insights on crop health, pest detection, and optimal planting times. Make data-driven decisions with confidence.",
+      mockup: ELoan,
+      color: "from-[#E0E7FF] to-[#C7D2FE] dark:from-[#E0E7FF]/80 dark:to-[#C7D2FE]/80"
+    },
+    {
+      icon: EMarket,
+      title: "E-Market",
+      description: "Digital marketplace for agricultural products",
+      details: "Connect with buyers and sellers in our digital marketplace. Access real-time market prices, manage inventory, and execute seamless transactions. Expand your market reach and optimize your sales strategy.",
+      mockup: ELoan,
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: EPlantDoctor,
+      title: "Plant Doctor",
+      description: "Smart crop health monitoring",
+      details: "Diagnose plant diseases instantly with our AI-powered image recognition system. Get detailed treatment recommendations and preventive measures. Protect your crops and maximize yields with expert guidance.",
+      mockup: ELoan,
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: EWarehouse,
+      title: "E-Warehouse",
+      description: "Smart storage management",
+      details: "Optimize your storage operations with our digital warehouse management system. Track inventory levels, manage storage conditions, and streamline logistics. Ensure product quality and reduce storage costs.",
+      mockup: ELoan,
+      color: "from-[#F3F4F6] to-[#E5E7EB] dark:from-[#F3F4F6]/80 dark:to-[#E5E7EB]/80"
+    },
+    { 
+      icon: EAuction,
+      title: "E-Auction",
+      description: "Digital auction platform",
+      details: "Participate in transparent digital auctions for agricultural products. Set reserve prices, place bids, and track auction status in real-time. Get fair market value for your produce through competitive bidding.",
+      mockup: ELoan,
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    { 
+      icon: EAuction,
+      title: "E-Loan",
+      description: "Agricultural financing solutions",
+      details: "Access quick and flexible agricultural loans through our digital platform. Get competitive interest rates, simplified application process, and transparent terms. Secure funding for your farming operations with ease.",
+      mockup: ELoan,
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+  ];
+
+  const features = [
+    {
+      icon: EMundi,
+      title: "E-Orders",
+      description: "Streamlined order management",
+      details: "Manage your agricultural orders efficiently with our digital platform. Track order status, handle bulk orders, and automate order processing. Reduce errors and improve customer satisfaction.",
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: ERental,
+      title: "E-Rental",
+      description: "Equipment rental marketplace",
+      details: "Access a wide range of agricultural equipment through our rental platform. Find available machinery, compare rates, and manage rentals digitally. Optimize equipment costs and improve operational efficiency.",
+      color: "from-[#F3E8FD] to-[#E9D8FD] dark:from-[#F3E8FD]/80 dark:to-[#E9D8FD]/80"
+    },
+    {
+      icon: ETransport,
+      title: "E-Transport",
+      description: "Smart logistics management",
+      details: "Streamline your agricultural logistics with our transport management system. Track shipments, optimize routes, and manage delivery schedules. Ensure timely and cost-effective product delivery.",
+      color: "from-[#E0E7FF] to-[#C7D2FE] dark:from-[#E0E7FF]/80 dark:to-[#C7D2FE]/80"
+    },
+    
+    {
+      icon: EMundi,
+      title: "E-Mundi",
+      description: "Global trade platform",
+      details: "Connect with international buyers and sellers in our global marketplace. Access market insights, manage cross-border transactions, and expand your business globally. Tap into new market opportunities.",
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: EFoodSupply,
+      title: "E-Food Supply",
+      description: "Supply chain management",
+      details: "Optimize your food supply chain with our digital platform. Track product flow, manage suppliers, and ensure quality control. Build a reliable and efficient supply network.",
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: EMunshi,
+      title: "E-Munshi",
+      description: "Digital record keeping",
+      details: "Maintain accurate digital records of your agricultural operations. Track transactions, manage documentation, and generate reports. Stay organized and compliant with digital record-keeping.",
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: ESettlements,
+      title: "Settlements",
+      description: "Automated payment processing",
+      details: "Process payments and settlements efficiently with our digital platform. Handle multiple payment methods, track transactions, and manage financial records. Ensure smooth and secure financial operations.",
+      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+    },
+    {
+      icon: EAnimalFeed,
+      title: "Animal Feed",
+      description: "Feed management system",
+      details: "Manage your animal feed inventory and distribution digitally. Track feed quality, monitor consumption, and optimize feed schedules. Ensure proper nutrition and cost-effective feed management.",
+      color: "from-[#FEF9C3] to-[#FEF08A] dark:from-[#FEF9C3]/80 dark:to-[#FEF08A]/80"
+    },
+    {
+      icon: <FaCloud />,
+      title: "Backend Feature",
+      description: "Real-time weather data and forecasts",
+      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      color: "from-[#FAE8FF] to-[#F5D0FE] dark:from-[#FAE8FF]/80 dark:to-[#F5D0FE]/80"
+    },
+    {
+      icon: <FaCloud />,
+      title: "Backend Feature",
+      description: "Real-time weather data and forecasts",
+      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      color: "from-[#ECFCCB] to-[#D9F99D] dark:from-[#ECFCCB]/80 dark:to-[#D9F99D]/80"
+    },
+    {
+      icon: <FaCloud />,
+      title: "Backend Feature",
+      description: "Real-time weather data and forecasts",
+      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      color: "from-[#FEE2E2] to-[#FECACA] dark:from-[#FEE2E2]/80 dark:to-[#FECACA]/80"
+    },
+    {
+      icon: <FaCloud />,
+      title: "Backend Feature",
+      description: "Real-time weather data and forecasts",
+      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      color: "from-[#FAE8FF] to-[#F5D0FE] dark:from-[#FAE8FF]/80 dark:to-[#F5D0FE]/80"
+    },
+  ];
 
   // Handle escape key to close modal
   useEffect(() => {
@@ -18,12 +176,12 @@ const Features = () => {
 
     if (isModalOpen) {
       document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      document.body.style.overflow = 'hidden';
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset'; // Restore scrolling when modal is closed
+      document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
 
@@ -37,44 +195,13 @@ const Features = () => {
     setSelectedFeature(null);
   };
 
-  const features = [
-    {
-      icon: <FaLeaf />,
-      title: "Smart Farming",
-      description: "AI-powered crop recommendations and disease detection",
-      details: "Our smart farming system uses advanced AI algorithms to analyze soil conditions, weather patterns, and crop health. Get personalized recommendations for optimal planting times, fertilization schedules, and pest control measures."
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Yield Analytics",
-      description: "Data-driven insights for better crop management",
-      details: "Track your farm's performance with detailed analytics. Monitor yield trends, resource usage, and cost efficiency. Make informed decisions based on historical data and predictive analytics."
-    },
-    {
-      icon: <FaTint />,
-      title: "Water Management",
-      description: "Efficient irrigation and water conservation",
-      details: "Optimize water usage with smart irrigation systems. Monitor soil moisture levels, weather forecasts, and crop water requirements. Reduce water waste and improve crop health."
-    },
-    {
-      icon: <FaMobileAlt />,
-      title: "Mobile Access",
-      description: "Manage your farm from anywhere",
-      details: "Access all farm management tools through our mobile app. Monitor field conditions, receive alerts, and make decisions on the go. Stay connected to your farm 24/7."
-    },
-    {
-      icon: <FaCloud />,
-      title: "Weather Integration",
-      description: "Real-time weather data and forecasts",
-      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events."
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Crop Protection",
-      description: "Early disease and pest detection",
-      details: "Detect crop diseases and pest infestations early with our AI-powered image recognition system. Get instant alerts and recommended treatment options to protect your yield."
-    }
-  ];
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % MockupFeatures.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + MockupFeatures.length) % MockupFeatures.length);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -143,43 +270,127 @@ const Features = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Feature Carousel */}
+        <div className="relative h-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-16">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0 flex flex-col md:flex-row"
+            >
+              {/* Mockup Image */}
+              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 flex items-center justify-center">
+                <motion.img
+                  src={MockupFeatures[currentSlide].mockup}
+                  alt={MockupFeatures[currentSlide].title}
+                  className="w-full h-auto object-contain"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                />
+              </div>
+
+              {/* Feature Description */}
+              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="text-center md:text-left"
+                >
+                  <motion.div 
+                    className={`w-16 h-16 mx-auto md:mx-0 mb-6 flex items-center justify-center bg-gradient-to-br ${MockupFeatures[currentSlide].color} rounded-full text-white text-3xl shadow-lg`}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <img src={MockupFeatures[currentSlide].icon} alt={MockupFeatures[currentSlide].title} className="w-8 h-8 object-contain" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    {MockupFeatures[currentSlide].title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                    {MockupFeatures[currentSlide].details}
+                  </p>
+                  <motion.button 
+                    className="px-6 py-2 border-2 border-brand text-brand rounded-full font-medium hover:bg-brand hover:text-white transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => openModal(MockupFeatures[currentSlide])}
+                  >
+                    Learn More
+                  </motion.button>
+                </motion.div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300"
+          >
+            <FaChevronRight />
+          </button>
+
+          {/* Slide Indicators */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {MockupFeatures.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-brand w-4'
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-brand/50'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="bg-white dark:bg-gray-800 p-8 rounded-2xl text-center shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50"
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: isDarkMode ? "0 20px 40px rgba(0, 0, 0, 0.3)" : "0 20px 40px rgba(0, 0, 0, 0.1)"
               }}
-              onClick={() => openModal(feature)}
+              onClick={() => {
+                setCurrentSlide(index);
+                openModal(feature);
+              }}
             >
               <motion.div 
-                className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 rounded-full text-emerald-600 dark:text-emerald-400 text-2xl transition-all duration-300"
+                className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br ${feature.color} rounded-full text-white text-xl transition-all duration-300 shadow-lg`}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                {feature.icon}
+                <img src={feature.icon} alt={feature.title} className="w-6 h-6 object-contain" />
               </motion.div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{feature.description}</p>
-              <motion.button 
-                className="px-6 py-2 border-2 border-emerald-600 text-emerald-600 dark:text-emerald-400 rounded-full font-medium hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  openModal(feature);
-                }}
-              >
-                Learn More
-              </motion.button>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
             </motion.div>
           ))}
         </div>
+
+        
       </div>
 
+      {/* Modal */}
       <AnimatePresence>
         {isModalOpen && selectedFeature && (
           <motion.div 
@@ -198,11 +409,15 @@ const Features = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <motion.div 
-                className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 rounded-full text-emerald-600 dark:text-emerald-400 text-3xl"
+                className={`w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-gradient-to-br ${selectedFeature.color} rounded-full text-white text-3xl shadow-lg`}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                {selectedFeature.icon}
+                {typeof selectedFeature.icon === 'string' ? (
+                  <img src={selectedFeature.icon} alt={selectedFeature.title} className="w-10 h-10 object-contain" />
+                ) : (
+                  selectedFeature.icon
+                )}
               </motion.div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">{selectedFeature.title}</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">{selectedFeature.details}</p>
