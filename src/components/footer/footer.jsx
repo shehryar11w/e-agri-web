@@ -46,20 +46,9 @@ const Footer = () => {
     { name: 'Download App', href: '#download' }
   ];
 
-  const companyLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Press', href: '#press' },
-    { name: 'Partners', href: '#partners' }
-  ];
-
   const supportLinks = [
-    { name: 'Help Center', href: '#help' },
-    { name: 'FAQs', href: '#faqs' },
-    { name: 'Terms of Service', href: '#terms' },
-    { name: 'Privacy Policy', href: '#privacy' },
-    { name: 'Contact Support', href: '#support' }
+    { name: 'Terms of Service', href: 'https://elixirflare.com/terms-and-conditions/' },
+    { name: 'Privacy Policy', href: 'https://elixirflare.com/privacy-policy/' },
   ];
 
   return (
@@ -159,27 +148,7 @@ const Footer = () => {
             </motion.ul>
           </motion.div>
 
-          {/* Company Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
-              Company
-              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </motion.h3>
-            <motion.ul className="space-y-3">
-              {companyLinks.map((link, index) => (
-                <motion.li key={index} variants={itemVariants}>
-                  <motion.a 
-                    href={link.href}
-                    className="text-gray-300 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                    {link.name}
-                  </motion.a>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
+          
 
           {/* Support Section */}
           <motion.div variants={itemVariants}>
@@ -203,43 +172,7 @@ const Footer = () => {
             </motion.ul>
           </motion.div>
 
-          {/* Contact Section */}
-          <motion.div variants={itemVariants}>
-            <motion.h3 className="text-lg font-semibold mb-6 relative inline-block group" variants={itemVariants}>
-              Contact Us
-              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-emerald-500 dark:bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </motion.h3>
-            <motion.ul className="space-y-4 mb-6">
-              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
-                <FaPhone className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
-                <span>+92 300 1234567</span>
-              </motion.li>
-              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
-                <FaEnvelope className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
-                <span>info@e-agri.pk</span>
-              </motion.li>
-              <motion.li className="flex items-start gap-3 text-gray-300 dark:text-gray-400 hover:text-white transition-colors group" variants={itemVariants}>
-                <FaMapMarkerAlt className="text-emerald-500 dark:text-emerald-400 text-lg group-hover:scale-110 transition-transform" />
-                <span>123 Agriculture Street, Islamabad, Pakistan</span>
-              </motion.li>
-            </motion.ul>
-            {/* <motion.div className="flex gap-2" variants={itemVariants}>
-              <motion.input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-md border border-white/10 dark:border-white/5 bg-white/5 dark:bg-white/[0.02] text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-emerald-500 dark:focus:border-emerald-400 focus:bg-white/10 dark:focus:bg-white/5 transition-all"
-                whileFocus={{ scale: 1.02 }}
-              />
-              <motion.button 
-                className="px-6 py-2 bg-emerald-500 dark:bg-emerald-400 text-white rounded-md hover:bg-emerald-600 dark:hover:bg-emerald-500 transition-colors relative overflow-hidden group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10 w-full">Subscribe</span>
-                <div className="absolute inset-0 bg-emerald-600 dark:bg-emerald-500 transform -translate-x-full group-hover:translate-x-0 transition-transform" />
-              </motion.button>
-            </motion.div> */}
-          </motion.div>
+          
         </div>
       </div>
 

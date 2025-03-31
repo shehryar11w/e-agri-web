@@ -23,18 +23,18 @@ import EAnimalFeed from '../../assets/modulesLogos/feed.png';
 
 const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);  
   const [currentSlide, setCurrentSlide] = useState(0);
   const { isDarkMode } = useTheme();
 
   const MockupFeatures = [
-    {
+    { 
       icon: EAdvisor,
       title: "E-Advisor",
       description: "AI-powered agricultural intelligence",
       details: "Our E-Advisor system leverages advanced AI to provide personalized farming recommendations. Get real-time insights on crop health, pest detection, and optimal planting times. Make data-driven decisions with confidence.",
       mockup: ELoan,
-      color: "from-[#E0E7FF] to-[#C7D2FE] dark:from-[#E0E7FF]/80 dark:to-[#C7D2FE]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EMarket,
@@ -42,23 +42,23 @@ const Features = () => {
       description: "Digital marketplace for agricultural products",
       details: "Connect with buyers and sellers in our digital marketplace. Access real-time market prices, manage inventory, and execute seamless transactions. Expand your market reach and optimize your sales strategy.",
       mockup: ELoan,
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EPlantDoctor,
       title: "Plant Doctor",
       description: "Smart crop health monitoring",
-      details: "Diagnose plant diseases instantly with our AI-powered image recognition system. Get detailed treatment recommendations and preventive measures. Protect your crops and maximize yields with expert guidance.",
+      details: "Diagnose plant diseases instantly with our AI-powered image recognition system. Get detailed treatment recommendations and preventive measures to protect your crops and maximize yields with expert guidance.",
       mockup: ELoan,
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EWarehouse,
       title: "E-Warehouse",
       description: "Smart storage management",
-      details: "Optimize your storage operations with our digital warehouse management system. Track inventory levels, manage storage conditions, and streamline logistics. Ensure product quality and reduce storage costs.",
+      details: "Optimize your storage operations with our digital warehouse management system. Track inventory levels, manage storage conditions, and streamline logistics. Ensure optimal product quality while reducing storage cost.",
       mockup: ELoan,
-      color: "from-[#F3F4F6] to-[#E5E7EB] dark:from-[#F3F4F6]/80 dark:to-[#E5E7EB]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
       icon: EAuction,
@@ -66,7 +66,7 @@ const Features = () => {
       description: "Digital auction platform",
       details: "Participate in transparent digital auctions for agricultural products. Set reserve prices, place bids, and track auction status in real-time. Get fair market value for your produce through competitive bidding.",
       mockup: ELoan,
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
       icon: EAuction,
@@ -74,7 +74,7 @@ const Features = () => {
       description: "Agricultural financing solutions",
       details: "Access quick and flexible agricultural loans through our digital platform. Get competitive interest rates, simplified application process, and transparent terms. Secure funding for your farming operations with ease.",
       mockup: ELoan,
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
   ];
 
@@ -84,85 +84,91 @@ const Features = () => {
       title: "E-Orders",
       description: "Streamlined order management",
       details: "Manage your agricultural orders efficiently with our digital platform. Track order status, handle bulk orders, and automate order processing. Reduce errors and improve customer satisfaction.",
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'eRental',
       icon: ERental,
       title: "E-Rental",
       description: "Equipment rental marketplace",
       details: "Access a wide range of agricultural equipment through our rental platform. Find available machinery, compare rates, and manage rentals digitally. Optimize equipment costs and improve operational efficiency.",
-      color: "from-[#F3E8FD] to-[#E9D8FD] dark:from-[#F3E8FD]/80 dark:to-[#E9D8FD]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'eTransport',
       icon: ETransport,
       title: "E-Transport",
       description: "Smart logistics management",
       details: "Streamline your agricultural logistics with our transport management system. Track shipments, optimize routes, and manage delivery schedules. Ensure timely and cost-effective product delivery.",
-      color: "from-[#E0E7FF] to-[#C7D2FE] dark:from-[#E0E7FF]/80 dark:to-[#C7D2FE]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
-    
     {
+      key: 'eMundi',
       icon: EMundi,
       title: "E-Mundi",
       description: "Global trade platform",
       details: "Connect with international buyers and sellers in our global marketplace. Access market insights, manage cross-border transactions, and expand your business globally. Tap into new market opportunities.",
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'eFoodSupply',
       icon: EFoodSupply,
       title: "E-Food Supply",
       description: "Supply chain management",
       details: "Optimize your food supply chain with our digital platform. Track product flow, manage suppliers, and ensure quality control. Build a reliable and efficient supply network.",
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'eMunshi',
       icon: EMunshi,
       title: "E-Munshi",
       description: "Digital record keeping",
       details: "Maintain accurate digital records of your agricultural operations. Track transactions, manage documentation, and generate reports. Stay organized and compliant with digital record-keeping.",
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'settlements',
       icon: ESettlements,
       title: "Settlements",
       description: "Automated payment processing",
       details: "Process payments and settlements efficiently with our digital platform. Handle multiple payment methods, track transactions, and manage financial records. Ensure smooth and secure financial operations.",
-      color: "from-[#D1FAE5] to-[#A7F3D0] dark:from-[#D1FAE5]/80 dark:to-[#A7F3D0]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
+      key: 'animalFeed',
       icon: EAnimalFeed,
       title: "Animal Feed",
       description: "Feed management system",
       details: "Manage your animal feed inventory and distribution digitally. Track feed quality, monitor consumption, and optimize feed schedules. Ensure proper nutrition and cost-effective feed management.",
-      color: "from-[#FEF9C3] to-[#FEF08A] dark:from-[#FEF9C3]/80 dark:to-[#FEF08A]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: <FaCloud />,
       title: "Backend Feature",
       description: "Real-time weather data and forecasts",
       details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
-      color: "from-[#FAE8FF] to-[#F5D0FE] dark:from-[#FAE8FF]/80 dark:to-[#F5D0FE]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: <FaCloud />,
       title: "Backend Feature",
       description: "Real-time weather data and forecasts",
       details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
-      color: "from-[#ECFCCB] to-[#D9F99D] dark:from-[#ECFCCB]/80 dark:to-[#D9F99D]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: <FaCloud />,
       title: "Backend Feature",
       description: "Real-time weather data and forecasts",
       details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
-      color: "from-[#FEE2E2] to-[#FECACA] dark:from-[#FEE2E2]/80 dark:to-[#FECACA]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: <FaCloud />,
       title: "Backend Feature",
       description: "Real-time weather data and forecasts",
       details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
-      color: "from-[#FAE8FF] to-[#F5D0FE] dark:from-[#FAE8FF]/80 dark:to-[#F5D0FE]/80"
+      color: "from-white to-white dark:from-white dark:to-white"
     },
   ];
 

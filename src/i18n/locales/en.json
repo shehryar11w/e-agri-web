@@ -1,0 +1,99 @@
+{
+  "header": {
+    "logoAlt": "E-Agri Logo"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "about": "About",
+    "contact": "Contact",
+    "downloadApp": "Download App"
+  },
+  "hero": {
+    "title": "Transforming Agriculture with",
+    "technology": "Technology",
+    "description": "Empowering farmers with cutting-edge solutions for sustainable and profitable farming.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "backgroundAlt": "Agriculture Background",
+    "dashboardAlt": "Agriculture Technology Dashboard"
+  },
+  "features": {
+    "title": "Our Features",
+    "subtitle": "See how our comprehensive toolset can transform your agricultural operations",
+    "eAdvisor": {
+      "title": "E-Advisor",
+      "description": "AI-Powered Agricultural Intelligence",
+      "details": "Our E-Advisor system uses advanced AI to provide personalized farming recommendations. Get real-time insights on crop health, pest detection, and optimal planting times. Make data-driven decisions with confidence."
+    },
+    "eMarket": {
+      "title": "E-Market",
+      "description": "Digital Marketplace for Agricultural Products",
+      "details": "Connect with buyers and sellers in our digital marketplace. Access real-time market prices, inventory management, and seamless transactions. Expand your market reach and optimize your sales strategy."
+    },
+    "plantDoctor": {
+      "title": "Plant Doctor",
+      "description": "Smart Crop Health Monitoring",
+      "details": "Instantly diagnose plant diseases with our AI-powered image recognition system. Get detailed treatment recommendations and preventive measures. Protect your crops and maximize yields with expert guidance."
+    },
+    "eWarehouse": {
+      "title": "E-Warehouse",
+      "description": "Smart Storage Management",
+      "details": "Optimize your storage operations with our digital warehouse management system. Monitor inventory levels, storage conditions, and logistics. Ensure product quality and reduce storage costs."
+    },
+    "eAuction": {
+      "title": "E-Auction",
+      "description": "Digital Auction Platform",
+      "details": "Participate in transparent digital auctions for agricultural products. Set reserve prices, place bids, and track auction status in real-time. Get fair market value for your produce through competitive bidding."
+    },
+    "eLoan": {
+      "title": "E-Loan",
+      "description": "Agricultural Financial Solutions",
+      "details": "Access quick and flexible agricultural loans through our digital platform. Get competitive interest rates, simple application process, and transparent terms. Easily secure funding for your farming operations."
+    },
+    "eOrders": {
+      "title": "E-Orders",
+      "description": "Better Order Management",
+      "details": "Efficiently manage your agricultural orders through our digital platform. Track order status, handle bulk orders, and automate order processing. Reduce errors and improve customer satisfaction."
+    },
+    "eRental": {
+      "title": "E-Rental",
+      "description": "Equipment Rental Marketplace",
+      "details": "Access a wide range of agricultural equipment through our rental platform. Find available machinery, compare prices, and manage rentals digitally. Optimize equipment costs and improve operational efficiency."
+    },
+    "eTransport": {
+      "title": "E-Transport",
+      "description": "Smart Logistics Management",
+      "details": "Optimize your agricultural logistics with our transport management system. Monitor shipments, optimize routes, and manage delivery schedules. Ensure timely and cost-effective product delivery."
+    },
+    "eMundi": {
+      "title": "E-Mundi",
+      "description": "Global Trading Platform",
+      "details": "Connect with international buyers and sellers in our global marketplace. Access market insights, manage cross-border transactions, and expand your business globally. Explore new market opportunities."
+    },
+    "eFoodSupply": {
+      "title": "E-Food Supply",
+      "description": "Supply Chain Management",
+      "details": "Optimize your food supply chain with our digital platform. Monitor product flow, manage suppliers, and ensure quality control. Build a reliable and efficient supply network."
+    },
+    "eMunshi": {
+      "title": "E-Munshi",
+      "description": "Digital Record Keeping",
+      "details": "Maintain accurate digital records of your agricultural operations. Track transactions, organize documents, and generate reports. Stay organized and compliant with digital record keeping."
+    },
+    "settlements": {
+      "title": "Settlements",
+      "description": "Automated Payment Processing",
+      "details": "Process payments and settlements efficiently through our digital platform. Handle multiple payment methods, track transactions, and organize financial records. Ensure smooth and secure financial operations."
+    },
+    "animalFeed": {
+      "title": "Animal Feed",
+      "description": "Feed Management System",
+      "details": "Digitally manage your livestock feed inventory and distribution. Monitor feed quality, track consumption, and optimize feed schedules. Ensure proper nutrition and cost-effective feed management."
+    }
+  },
+  "download": {
+    "title": "Download E-Agri App",
+    "description": "Get access to all our features on the go. Download our mobile app and transform your farming experience today."
+  }
+} 

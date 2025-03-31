@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaGlobe, FaSun, FaMoon } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '../language-switcher/language-switcher';
 
 import logo from '../../assets/logo.png';
 
@@ -9,6 +11,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,11 +66,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Features', href: '#features' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Download App', href: '#download' }
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.features'), href: '#features' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' },
+    { name: t('nav.downloadApp'), href: '#download' }
   ];
 
   return (
@@ -85,7 +88,7 @@ const Header = () => {
           className="flex items-center gap-3 text-gray-900 dark:text-white hover:scale-105 transition-transform"
           whileHover={{ scale: 1.05 }}
         >
-          <img src={logo} alt="E-Agri Logo" className="w-10 h-10 drop-shadow-md" />
+          <img src={logo} alt={t('header.logoAlt')} className="w-10 h-10 drop-shadow-md" />
           <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-800 dark:from-emerald-400 dark:to-emerald-600 bg-clip-text text-transparent">
             E-Agri
           </span>
@@ -117,14 +120,9 @@ const Header = () => {
             {isDarkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
           </motion.button>
 
-          <motion.button 
-            className="hidden md:flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-md text-gray-600 dark:text-gray-300 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaGlobe />
-            <span>EN</span>
-          </motion.button>
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
 
           <motion.button 
             className="md:hidden text-gray-900 dark:text-white text-xl p-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
@@ -167,6 +165,9 @@ const Header = () => {
                 {item.name}
               </motion.a>
             ))}
+            <div className="mt-8">
+              <LanguageSwitcher />
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>
