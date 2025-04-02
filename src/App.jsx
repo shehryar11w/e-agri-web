@@ -12,6 +12,7 @@ import About from './components/about/about'
 import Navbar from './components/navbar/navbar'
 import LanguageSwitcher from './components/language-switcher/language-switcher'
 import Download from './components/download/download'
+import Contact from './components/contact/contact'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Timeline />
           {/* <Team /> */}
           <Download />
+          <Contact />
         </main>
         <Footer />
       </div>

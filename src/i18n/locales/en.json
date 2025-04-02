@@ -95,5 +95,28 @@
   "download": {
     "title": "Download E-Agri App",
     "description": "Get access to all our features on the go. Download our mobile app and transform your farming experience today."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "We're dedicated to modernizing Pakistan's agricultural economy by connecting farmers, suppliers, and buyers through innovative technology.\n\nHave questions or ideas? We'd love to hear from you. Share your thoughts below and help us improve our platform for Pakistan's agricultural community.\n\nLet's transform Pakistan's agriculture, together.",
+    "categories": {
+      "general": "General Information Request",
+      "feedback": "Feedback",
+      "suggestion": "Suggestion",
+      "feature": "Feature Request",
+      "collaboration": "Collaboration"
+    },
+    "form": {
+      "category": "Category",
+      "selectCategory": "Select a category",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Thank you for your message! We'll get back to you soon.",
+      "error": "Please complete the reCAPTCHA verification."
+    }
   }
 } 
