@@ -42,7 +42,6 @@ const Footer = () => {
     { name: 'Home', href: '#home' },
     { name: 'Features', href: '#features' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
     { name: 'Download App', href: '#download' }
   ];
 

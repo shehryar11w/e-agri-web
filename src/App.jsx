@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import './i18n/i18n'
 import Header from './components/header/header'
-import Hero from './components/hero/hero'
+import Home from './components/home/home'
 import Partners from './components/partners/partners'
 import Features from './components/features/features'
 import Timeline from './components/timeline/timeline'
@@ -22,12 +22,12 @@ const App = () => {
         </Navbar>
         <Header />
         <main className="flex-1 pt-[70px]">
-          <Hero />
-          <Features />
+          <Home />
+          <Features />  
           <About />
           <Partners />
           <Timeline />
-          <Team />
+          {/* <Team /> */}
           <Download />
         </main>
         <Footer />
