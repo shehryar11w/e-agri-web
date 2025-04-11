@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import Dashboard from '../../assets/Dashboard.png';
-import HeroBkg from '../../assets/Hero Bkg.jpg';
+import HeroBkg from '../../assets/HeroBkg.png';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -43,23 +43,38 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
         {/* Dashboard Image */}
         <motion.div 
-          className="relative w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px] mx-auto order-2 md:order-1"
+          className="relative w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] mx-auto order-2 md:order-1"
           style={{
             y: imageY,
             scale: imageScale,
             opacity: imageOpacity,
           }}
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          animate={{ 
+            opacity: 1, 
+            scale: 1,
+            y: [0, -20, 0],
+          }}
+          transition={{ 
+            duration: 0.8, 
+            delay: 0.4,
+            y: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
         >
           <div className="relative w-full aspect-[4/3] sm:aspect-[16/9]">
             <img 
               src={Dashboard} 
               alt={t('hero.dashboardAlt')} 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain drop-shadow-2xl"
               loading="eager"
             />
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-brand/10 blur-3xl transform -translate-y-4" />
+            
           </div>
         </motion.div>
 

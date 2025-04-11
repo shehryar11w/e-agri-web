@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
-
-
+import ceoImage from '../../assets/ceo.png';
+import cooImage from '../../assets/coo.png';
 const teamData = [
   {
-    name: 'John Smith',
-    role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-    bio: 'Agricultural technology expert with 15+ years of experience in sustainable farming.',
+    name: 'Adnan Syed',
+    role: 'CEO & Chairman',
+    image: ceoImage,
+    bio: 'A returned home expat, A polymath with over two decades of successful technology entrepreneurship',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -16,32 +16,10 @@ const teamData = [
     },
   },
   {
-    name: 'Sarah Johnson',
-    role: 'CTO',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
+    name: 'Shehzad Makhani',
+    role: 'COO',
+    image: cooImage,
     bio: 'Tech innovator passionate about making agriculture more efficient and sustainable.',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Head of Product',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-    bio: 'Product strategist focused on creating user-friendly agricultural solutions.',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Emma Davis',
-    role: 'Lead Developer',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
-    bio: 'Full-stack developer with expertise in building scalable agricultural platforms.',
     social: {
       linkedin: '#',
       twitter: '#',

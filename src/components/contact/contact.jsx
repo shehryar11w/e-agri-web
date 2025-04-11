@@ -17,11 +17,11 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const categories = [
-    { value: 'general', label: t('contact.categories.general') },
-    { value: 'feedback', label: t('contact.categories.feedback') },
-    { value: 'suggestion', label: t('contact.categories.suggestion') },
-    { value: 'feature', label: t('contact.categories.feature') },
-    { value: 'collaboration', label: t('contact.categories.collaboration') }
+    { value: 'General', label: t('contact.categories.general') },
+    { value: 'Feedback', label: t('contact.categories.feedback') },
+    { value: 'Suggestion', label: t('contact.categories.suggestion') },
+    { value: 'Feature Request', label: t('contact.categories.feature') },
+    { value: 'Collaboration', label: t('contact.categories.collaboration') }
   ];
 
   const handleChange = (e) => {
@@ -46,9 +46,18 @@ const Contact = () => {
 
     setIsSubmitting(true);
     try {
-      // Here you would typically send the form data to your backend
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setSubmitStatus('success');
       setFormData({
         category: '',
@@ -59,6 +68,7 @@ const Contact = () => {
       });
       setCaptchaValue(null);
     } catch (error) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -181,7 +191,7 @@ const Contact = () => {
             {/* reCAPTCHA */}
             <div className="flex justify-center">
               <ReCAPTCHA
-                sitekey="6LenhQcrAAAAAMk-2IXgwKLtsukETEheZiRFplDL"
+                sitekey="6Lf8rwcrAAAAAI6PRiH33ryFU1yhvYNszPMbMii4"
                 onChange={handleCaptchaChange}
                 theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
               />

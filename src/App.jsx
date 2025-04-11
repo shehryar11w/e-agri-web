@@ -13,6 +13,7 @@ import Navbar from './components/navbar/navbar'
 import LanguageSwitcher from './components/language-switcher/language-switcher'
 import Download from './components/download/download'
 import Contact from './components/contact/contact'
+import ComingSoon from './components/home/ComingSoon'
 
 const App = () => {
   return (
@@ -28,8 +29,9 @@ const App = () => {
           <About />
           <Partners />
           <Timeline />
-          {/* <Team /> */}
           <Download />
+          <ComingSoon />
+          <Team />
           <Contact />
         </main>
         <Footer />

@@ -78,6 +78,14 @@ const Features = () => {
     },
   ];
 
+  // Auto-swipe functionality
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % MockupFeatures.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [MockupFeatures.length]);
+
   const features = [
     {
       icon: EMundi,
