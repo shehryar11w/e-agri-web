@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaLeaf, FaTractor, FaSeedling, FaHandshake } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import Dashboard from '../../assets/Dashboard.png';
 import HeroBkg from '../../assets/HeroBkg.png';
@@ -39,6 +39,22 @@ const Hero = () => {
 
       {/* Additional gradient effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E8F5E9_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,#1B4332_0%,transparent_50%)] opacity-30 pointer-events-none" />
+
+      {/* Agricultural elements overlay */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 text-emerald-500/20 dark:text-emerald-400/20 transform rotate-12">
+          <FaLeaf className="w-24 h-24" />
+        </div>
+        <div className="absolute bottom-40 right-10 text-emerald-500/20 dark:text-emerald-400/20 transform -rotate-12">
+          <FaTractor className="w-32 h-32" />
+        </div>
+        <div className="absolute top-1/3 right-1/4 text-emerald-500/20 dark:text-emerald-400/20">
+          <FaSeedling className="w-16 h-16" />
+        </div>
+        <div className="absolute bottom-1/4 left-1/3 text-emerald-500/20 dark:text-emerald-400/20">
+          <FaHandshake className="w-20 h-20" />
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
         {/* Dashboard Image */}

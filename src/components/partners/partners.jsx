@@ -4,13 +4,14 @@ import { motion, useAnimation } from 'framer-motion';
 import mite from '../../assets/partners/mite.png';
 import euronet from '../../assets/partners/euronet.png';
 import faysalBank from '../../assets/partners/faysalBank.svg';
-
+import cma from '../../assets/partners/cma.svg';
 const Partners = () => {
 
   const partners = [
     { name: 'MiTe', logo: mite },
     { name: 'Euronet', logo: euronet },
     { name: 'Faysal Bank', logo: faysalBank },
+    { name: 'CMA', logo: cma },
   ];
 
   const controls = useAnimation();

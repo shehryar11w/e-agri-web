@@ -1,33 +1,62 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaSeedling, FaTractor, FaChartLine, FaHandshake } from 'react-icons/fa';
-
+import { FaSeedling, FaTractor, FaChartLine, FaHandshake, FaLightbulb, FaFlask, FaWarehouse, FaLeaf, FaRocket } from 'react-icons/fa';
 
 const timelineData = [
   {
-    year: '2020',
-    title: 'Platform Launch',
-    description: 'Successfully launched our e-agri platform with core features for farmers.',
-    icon: FaSeedling,
+    year: 'September 2024',
+    title: 'Conception',
+    description: 'Initial idea and concept development of E-Agri platform.',
+    icon: FaLightbulb,
   },
   {
-    year: '2021',
-    title: 'Expansion',
-    description: 'Expanded our services to cover over 10,000 acres of farmland.',
-    icon: FaTractor,
+    year: 'October 2024',
+    title: 'Research',
+    description: 'Comprehensive market research and stakeholder analysis.',
+    icon: FaFlask,
   },
   {
-    year: '2022',
-    title: 'Growth',
-    description: 'Achieved 50% increase in farmer productivity through our platform.',
+    year: 'November 2024',
+    title: 'Initial Framework',
+    description: 'Development of core platform architecture and framework.',
     icon: FaChartLine,
   },
   {
-    year: '2023',
-    title: 'Partnerships',
-    description: 'Formed strategic partnerships with major agricultural organizations.',
-    icon: FaHandshake,
+    year: 'December 2024',
+    title: 'POC',
+    description: 'Proof of Concept development and initial testing.',
+    icon: FaSeedling,
   },
+  {
+    year: 'January 2025',
+    title: 'Commerce Platform',
+    description: 'Launch of the e-commerce platform for agricultural products.',
+    icon: FaTractor,
+  },
+  {
+    year: 'February 2025',
+    title: 'Warehouse & BPR',
+    description: 'Warehouse designs and Business Process Reengineering implementation.',
+    icon: FaWarehouse,
+  },
+  {
+    year: 'March 2025',
+    title: 'Precision Farming',
+    description: 'Implementation of precision farming and diagnostics modules.',
+    icon: FaLeaf,
+  },
+  {
+    year: 'April 2025',
+    title: 'Official Launch',
+    description: 'Official platform launch with comprehensive features.',
+    icon: FaRocket,
+  },
+  {
+    year: 'Current',
+    title: 'Expansion Phase',
+    description: 'Onboarding banks, vendors, farmers and expanding our team of experts for national integrations with all stakeholders.',
+    icon: FaHandshake,
+  }
 ];
 
 const containerVariants = {
@@ -53,25 +82,17 @@ const itemVariants = {
 };
 
 const Timeline = () => {
-  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
+    target: containerRef,
+    offset: ["start end", "end start"]
   });
 
-  // Parallax effect for the header
-  const headerY = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
-  // Scale effect for timeline items
-  const itemScale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-  const itemOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
-  // Connector animation
-  const connectorScale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const headerY = useTransform(scrollYProgress, [0, 0.2], [100, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden" ref={sectionRef}>
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden" id="timeline">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#E8F5E9_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,#1B4332_0%,transparent_50%)] opacity-30 pointer-events-none" />
 
@@ -91,49 +112,34 @@ const Timeline = () => {
             Our Journey
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            Milestones that shaped our growth and success
+            The roadmap to revolutionizing agriculture in Pakistan
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          ref={containerRef}
         >
           {timelineData.map((item, index) => (
             <motion.div
               key={index}
-              className="relative p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-md dark:shadow-gray-900/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-400 hover:bg-gray-50 dark:hover:bg-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg dark:shadow-gray-900/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 backdrop-blur-sm hover:border-emerald-500 dark:hover:border-emerald-400"
               variants={itemVariants}
-              style={{
-                scale: itemScale,
-                opacity: itemOpacity,
-              }}
-              whileHover={{
-                scale: 1.05,
-                transition: { duration: 0.3 },
-              }}
             >
-              <div className="w-14 h-14 mb-6 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 rounded-xl text-emerald-600 dark:text-emerald-400 text-2xl transition-all duration-300 group-hover:rotate-360">
-                <item.icon />
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="text-sm text-emerald-600 dark:text-emerald-400">{item.year}</p>
+                </div>
               </div>
-              <div>
-                <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-semibold mb-4">
-                  {item.year}
-                </span>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.description}</p>
-              </div>
-              {index < timelineData.length - 1 && (
-                <motion.div 
-                  className="absolute top-1/2 -right-4 w-8 h-0.5 bg-emerald-500 dark:bg-emerald-400 opacity-30 transform -translate-y-1/2"
-                  style={{
-                    scaleX: connectorScale,
-                  }}
-                />
-              )}
+              <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>

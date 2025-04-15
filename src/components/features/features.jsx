@@ -111,14 +111,6 @@ const Features = () => {
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
-      key: 'eMundi',
-      icon: EMundi,
-      title: "E-Mundi",
-      description: "Global trade platform",
-      details: "Connect with international buyers and sellers in our global marketplace. Access market insights, manage cross-border transactions, and expand your business globally. Tap into new market opportunities.",
-      color: "from-white to-white dark:from-white dark:to-white"
-    },
-    {
       key: 'eFoodSupply',
       icon: EFoodSupply,
       title: "E-Food Supply",
@@ -236,6 +228,45 @@ const Features = () => {
         duration: 0.5,
         ease: "easeOut"
       }
+    },
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)",
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    },
+    tap: {
+      scale: 0.95,
+      transition: {
+        duration: 0.1
+      }
+    }
+  };
+
+  const iconVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.2,
+      rotate: 5,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const pulseVariants = {
+    initial: { scale: 1 },
+    pulse: {
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 1.5,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut"
+      }
     }
   };
 
@@ -285,7 +316,7 @@ const Features = () => {
         </motion.div>
 
         {/* Feature Carousel */}
-        <div className="relative h-[600px] bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden mb-16">
+        <div className="relative h-auto max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl mb-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -293,14 +324,14 @@ const Features = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="absolute inset-0 flex flex-col md:flex-row"
+              className="flex flex-col md:flex-row min-h-[400px]"
             >
               {/* Mockup Image */}
-              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 flex items-center justify-center">
+              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center">
                 <motion.img
                   src={MockupFeatures[currentSlide].mockup}
                   alt={MockupFeatures[currentSlide].title}
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto max-h-[200px] sm:max-h-[250px] md:max-h-none object-contain"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -308,7 +339,7 @@ const Features = () => {
               </div>
 
               {/* Feature Description */}
-              <div className="w-full md:w-1/2 h-1/2 md:h-full p-8 flex flex-col justify-center">
+              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex flex-col justify-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -316,21 +347,21 @@ const Features = () => {
                   className="text-center md:text-left"
                 >
                   <motion.div 
-                    className={`w-16 h-16 mx-auto md:mx-0 mb-6 flex items-center justify-center bg-gradient-to-br ${MockupFeatures[currentSlide].color} rounded-full text-white text-3xl shadow-lg`}
+                    className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto md:mx-0 mb-4 sm:mb-6 flex items-center justify-center bg-gradient-to-br ${MockupFeatures[currentSlide].color} rounded-full text-white text-2xl sm:text-3xl shadow-lg`}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
-                    <img src={MockupFeatures[currentSlide].icon} alt={MockupFeatures[currentSlide].title} className="w-8 h-8 object-contain" />
+                    <img src={MockupFeatures[currentSlide].icon} alt={MockupFeatures[currentSlide].title} className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">
                     {MockupFeatures[currentSlide].title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    {MockupFeatures[currentSlide].details}
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
+                    {MockupFeatures[currentSlide].description}
                   </p>
                   <motion.button 
-                    className="px-6 py-2 border-2 border-brand text-brand rounded-full font-medium hover:bg-brand hover:text-white transition-all duration-300"
+                    className="px-4 sm:px-6 py-2 border-2 m-4 border-brand text-brand rounded-full text-sm sm:text-base font-medium hover:bg-brand hover:text-white transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => openModal(MockupFeatures[currentSlide])}
@@ -345,15 +376,15 @@ const Features = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
           >
-            <FaChevronLeft />
+            <FaChevronLeft className="text-sm sm:text-base" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
           >
-            <FaChevronRight />
+            <FaChevronRight className="text-sm sm:text-base" />
           </button>
 
           {/* Slide Indicators */}
@@ -377,26 +408,57 @@ const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50"
+              className="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50 relative overflow-hidden group"
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: isDarkMode ? "0 20px 40px rgba(0, 0, 0, 0.3)" : "0 20px 40px rgba(0, 0, 0, 0.1)"
-              }}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              whileTap="tap"
               onClick={() => {
                 setCurrentSlide(index);
                 openModal(feature);
               }}
             >
+              {/* Pulse animation background */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent rounded-2xl"
+                variants={pulseVariants}
+                initial="initial"
+                animate="pulse"
+              />
+              
+              {/* Click indicator */}
+              <motion.div 
+                className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center text-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                </svg>
+              </motion.div>
+              
               <motion.div 
                 className={`w-12 h-12 mx-auto mb-4 flex items-center justify-center bg-gradient-to-br ${feature.color} rounded-full text-white text-xl transition-all duration-300 shadow-lg`}
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
+                variants={iconVariants}
+                initial="initial"
+                whileHover="hover"
               >
                 <img src={feature.icon} alt={feature.title} className="w-6 h-6 object-contain" />
               </motion.div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{feature.description}</p>
+              
+              {/* Click to view text */}
+              <motion.div 
+                className="mt-4 text-xs text-brand font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                Click to learn more
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { FaChevronLeft, FaChevronRight, FaGraduationCap, FaNewspaper, FaMicroscope, FaUsers, FaRobot, FaShoppingCart, FaPhoneAlt, FaThermometerHalf, FaPlane } from 'react-icons/fa';
+import { 
+  FaChevronLeft, FaChevronRight, FaGraduationCap, FaNewspaper, FaMicroscope, 
+  FaUsers, FaRobot, FaShoppingCart, FaPhoneAlt, FaThermometerHalf, FaPlane, 
+  FaFingerprint, FaNetworkWired, FaFlask, FaBook, FaVideo, FaChartLine, 
+  FaHandshake, FaCloud, FaSatellite, FaLeaf, FaSeedling, FaTractor, 
+  FaSearch, FaDatabase, FaLightbulb, FaGlobe, FaUserFriends, FaComments,
+  FaBrain, FaChartBar, FaCog
+} from 'react-icons/fa';
 
 const ComingSoon = () => {
   const { t } = useTranslation();
@@ -11,47 +18,92 @@ const ComingSoon = () => {
     {
       title: 'E Learn',
       description: 'Interactive agricultural learning platform',
-      icon: <FaGraduationCap className="w-8 h-8" />
+      icon: <FaGraduationCap className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaBook className="w-5 h-5" />, text: 'Interactive Courses' },
+        { icon: <FaVideo className="w-5 h-5" />, text: 'Video Tutorials' },
+        { icon: <FaChartLine className="w-5 h-5" />, text: 'Progress Tracking' }
+      ]
     },
     {
       title: 'Community Classifieds',
       description: 'Buy, sell, and trade within the farming community',
-      icon: <FaShoppingCart className="w-8 h-8" />
+      icon: <FaShoppingCart className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaHandshake className="w-5 h-5" />, text: 'Secure Transactions' },
+        { icon: <FaSearch className="w-5 h-5" />, text: 'Advanced Search' },
+        { icon: <FaGlobe className="w-5 h-5" />, text: 'Local Marketplace' }
+      ]
     },
     {
-      title: 'Agri Phone',
-      description: 'Direct communication with agricultural experts',
-      icon: <FaPhoneAlt className="w-8 h-8" />
+      title: 'AgriPhone',
+      description: 'Specialized farming device with fingerprint scanner, LoRaWAN connectivity, and soil analytics',
+      icon: <FaPhoneAlt className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaFingerprint className="w-5 h-5" />, text: 'Fingerprint Scanner' },
+        { icon: <FaNetworkWired className="w-5 h-5" />, text: 'LoRaWAN Connectivity' },
+        { icon: <FaFlask className="w-5 h-5" />, text: 'Multi-mode Soil Analytics' }
+      ]
     },
     {
       title: 'IoT Soil Sensors',
       description: 'Real-time soil monitoring and analysis',
-      icon: <FaThermometerHalf className="w-8 h-8" />
+      icon: <FaThermometerHalf className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaCloud className="w-5 h-5" />, text: 'Cloud Integration' },
+        { icon: <FaDatabase className="w-5 h-5" />, text: 'Data Analytics' },
+        { icon: <FaChartBar className="w-5 h-5" />, text: 'Trend Visualization' }
+      ]
     },
     {
       title: 'Drone Services',
       description: 'Aerial monitoring and spraying services',
-      icon: <FaPlane className="w-8 h-8" />
+      icon: <FaPlane className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaSatellite className="w-5 h-5" />, text: 'Aerial Mapping' },
+        { icon: <FaLeaf className="w-5 h-5" />, text: 'Precision Spraying' },
+        { icon: <FaSeedling className="w-5 h-5" />, text: 'Crop Monitoring' }
+      ]
     },
     {
       title: 'Latest News',
       description: 'Stay updated with agricultural news',
-      icon: <FaNewspaper className="w-8 h-8" />
+      icon: <FaNewspaper className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaGlobe className="w-5 h-5" />, text: 'Global Updates' },
+        { icon: <FaSearch className="w-5 h-5" />, text: 'Customized Feeds' },
+        { icon: <FaLightbulb className="w-5 h-5" />, text: 'Market Insights' }
+      ]
     },
     {
       title: 'New Research',
       description: 'Access to latest agricultural research',
-      icon: <FaMicroscope className="w-8 h-8" />
+      icon: <FaMicroscope className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaDatabase className="w-5 h-5" />, text: 'Research Database' },
+        { icon: <FaChartLine className="w-5 h-5" />, text: 'Data Analysis' },
+        { icon: <FaCog className="w-5 h-5" />, text: 'Innovation Tracking' }
+      ]
     },
     {
       title: 'Community Connections',
       description: 'Connect with fellow farmers and experts',
-      icon: <FaUsers className="w-8 h-8" />
+      icon: <FaUsers className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaUserFriends className="w-5 h-5" />, text: 'Expert Network' },
+        { icon: <FaComments className="w-5 h-5" />, text: 'Discussion Forums' },
+        { icon: <FaHandshake className="w-5 h-5" />, text: 'Collaboration Tools' }
+      ]
     },
     {
       title: 'Agentic AI',
       description: 'AI-powered farming assistance and recommendations',
-      icon: <FaRobot className="w-8 h-8" />
+      icon: <FaRobot className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaBrain className="w-5 h-5" />, text: 'Smart Recommendations' },
+        { icon: <FaChartBar className="w-5 h-5" />, text: 'Predictive Analytics' },
+        { icon: <FaCog className="w-5 h-5" />, text: 'Automated Planning' }
+      ]
     }
   ];
 
@@ -129,9 +181,28 @@ const ComingSoon = () => {
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
                       {feature.description}
                     </p>
+                    
+                    {feature.capabilities && (
+                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                          Key Features:
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                          {feature.capabilities.map((capability, idx) => (
+                            <div 
+                              key={idx} 
+                              className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full text-xs"
+                            >
+                              <span className="text-brand">{capability.icon}</span>
+                              <span className="text-gray-700 dark:text-gray-300">{capability.text}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>

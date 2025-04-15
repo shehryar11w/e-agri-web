@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import ceoImage from '../../assets/ceo.png';
 import cooImage from '../../assets/coo.png';
+import kamranAhsan from '../../assets/kamranAhsan.jpg';
 const teamData = [
   {
     name: 'Adnan Syed',
     role: 'CEO & Chairman',
     image: ceoImage,
-    bio: 'A returned home expat, A polymath with over two decades of successful technology entrepreneurship',
+    bio: 'Tech entrepreneur with 25+ years of experience in scaling innovative ventures across the U.S. returns to Pakistan to combine technical expertise with strategic vision to transform agriculture.',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -20,6 +21,17 @@ const teamData = [
     role: 'COO',
     image: cooImage,
     bio: 'Tech innovator passionate about making agriculture more efficient and sustainable.',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    name: 'Prof. Dr. Kamran Ahsan',
+    role: 'Advisory Board Member',
+    image: kamranAhsan,
+    bio: 'Dean of Engineering at MiTE, PhD from Stafford University UK, distinguished Computer Scientist with multiple patents and a farmer with a passion for agriculture.',
     social: {
       linkedin: '#',
       twitter: '#',

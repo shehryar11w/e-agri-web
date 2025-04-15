@@ -11,12 +11,12 @@ const About = () => {
     {
       icon: <FaLeaf className="w-6 h-6" />,
       title: 'Our Mission',
-      description: 'To empower Pakistani farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.'
+      description: 'To empower farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.'
     },
     {
       icon: <FaChartLine className="w-6 h-6" />,
       title: 'Our Vision',
-      description: "To transform Pakistan's agricultural sector into a modern, efficient, and sustainable industry that feeds the nation."
+      description: "To transform Pakistan's agricultural sector into a modern, efficient, and sustainable industry that feeds the globe."
     },
     {
       icon: <FaUsers className="w-6 h-6" />,
