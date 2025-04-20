@@ -4,6 +4,7 @@ import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import ceoImage from '../../assets/ceo.png';
 import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/kamranAhsan.jpg';
+import abdulRehman from '../../assets/AbdulRehman.jpg';
 const teamData = [
   {
     name: 'Adnan Syed',
@@ -38,6 +39,18 @@ const teamData = [
       github: '#',
     },
   },
+  {
+    name: 'Prof. Abdul Rehman Mehmood ',
+    role: 'Advisory Board Member',
+    image: abdulRehman,
+    bio: 'Senior Technology Consultant and Assistant Professor at FAST-NU (Computer Science). Having 25+ years of experience in software development. Background in smart farming solutions, project management, IT auditing and security',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+
 ];
 
 const containerVariants = {

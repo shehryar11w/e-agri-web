@@ -7,7 +7,7 @@ import {
   FaFingerprint, FaNetworkWired, FaFlask, FaBook, FaVideo, FaChartLine, 
   FaHandshake, FaCloud, FaSatellite, FaLeaf, FaSeedling, FaTractor, 
   FaSearch, FaDatabase, FaLightbulb, FaGlobe, FaUserFriends, FaComments,
-  FaBrain, FaChartBar, FaCog
+  FaBrain, FaChartBar, FaCog, FaUtensils, FaTruck, FaWarehouse, FaClipboardCheck
 } from 'react-icons/fa';
 
 const ComingSoon = () => {
@@ -103,6 +103,26 @@ const ComingSoon = () => {
         { icon: <FaBrain className="w-5 h-5" />, text: 'Smart Recommendations' },
         { icon: <FaChartBar className="w-5 h-5" />, text: 'Predictive Analytics' },
         { icon: <FaCog className="w-5 h-5" />, text: 'Automated Planning' }
+      ]
+    },
+    {
+      title: 'E-Food Supply',
+      description: 'Supply chain management for agricultural products',
+      icon: <FaUtensils className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaTruck className="w-5 h-5" />, text: 'Logistics Tracking' },
+        { icon: <FaWarehouse className="w-5 h-5" />, text: 'Inventory Management' },
+        { icon: <FaClipboardCheck className="w-5 h-5" />, text: 'Quality Control' }
+      ]
+    },
+    {
+      title: 'Animal Feed',
+      description: 'Feed management system for livestock',
+      icon: <FaSeedling className="w-8 h-8" />,
+      capabilities: [
+        { icon: <FaDatabase className="w-5 h-5" />, text: 'Feed Inventory' },
+        { icon: <FaChartLine className="w-5 h-5" />, text: 'Consumption Tracking' },
+        { icon: <FaClipboardCheck className="w-5 h-5" />, text: 'Nutrition Planning' }
       ]
     }
   ];

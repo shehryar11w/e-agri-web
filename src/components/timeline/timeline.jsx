@@ -5,7 +5,7 @@ import { FaSeedling, FaTractor, FaChartLine, FaHandshake, FaLightbulb, FaFlask, 
 const timelineData = [
   {
     year: 'September 2024',
-    title: 'Conception',
+    title: 'Inception',
     description: 'Initial idea and concept development of E-Agri platform.',
     icon: FaLightbulb,
   },
