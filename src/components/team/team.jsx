@@ -50,6 +50,17 @@ const teamData = [
       github: '#',
     },
   },
+  {
+    name: 'Nasira Hoori',
+    role: 'Advisory Board Member',
+    image: kamranAhsan,
+    bio: "Nasira Hoori is one of Pakistan’s Leading Executive Search Specialists. She holds 17 years of national and multinational  experience and has been responsible for placing thousands of professionals  in the corporate sector including leading startups in Pakistan.",
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
 
 ];
 
