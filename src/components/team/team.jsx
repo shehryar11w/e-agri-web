@@ -10,7 +10,7 @@ const teamData = [
     name: 'Adnan Syed',
     role: 'CEO & Chairman',
     image: ceoImage,
-    bio: 'Tech entrepreneur with 25+ years of experience in scaling innovative ventures across the U.S. returns to Pakistan to combine technical expertise with strategic vision to transform agriculture.',
+    bio: 'Tech entrepreneur with 25+ years of experience in scaling innovative ventures across the U.S. Returns to Pakistan to combine technical expertise with strategic vision to transform agriculture through digital innovation.',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -21,7 +21,7 @@ const teamData = [
     name: 'Shehzad Makhani',
     role: 'COO',
     image: cooImage,
-    bio: 'Tech innovator passionate about making agriculture more efficient and sustainable.',
+    bio: 'Chief Operating Officer at E-Agri with over two decades of experience in operations, risk management, and financial systems. Previously served as Chief Risk Officer and Head of Operations at the Pakistan Mercantile Exchange (PMEX).',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -32,7 +32,7 @@ const teamData = [
     name: 'Prof. Dr. Kamran Ahsan',
     role: 'Advisory Board Member',
     image: kamranAhsan,
-    bio: 'Dean of Engineering at MiTE, PhD from Stafford University UK, distinguished Computer Scientist with multiple patents and a farmer with a passion for agriculture.',
+    bio: 'Dean of Engineering at MiTE with a PhD from Stafford University UK. Distinguished Computer Scientist with multiple patents and 100+ publications in Information Systems and Mobile Technology. Passionate about applying technology to agriculture.',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -40,10 +40,10 @@ const teamData = [
     },
   },
   {
-    name: 'Prof. Abdul Rehman Mehmood ',
+    name: 'Prof. Abdul Rehman Mehmood',
     role: 'Advisory Board Member',
     image: abdulRehman,
-    bio: 'Senior Technology Consultant and Assistant Professor at FAST-NU (Computer Science). Having 25+ years of experience in software development. Background in smart farming solutions, project management, IT auditing and security',
+    bio: 'Senior Technology Consultant and Assistant Professor at FAST-NU (Computer Science) with 25+ years of experience in software development. Expert in smart farming solutions, project management, IT auditing, and security.',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -54,14 +54,13 @@ const teamData = [
     name: 'Nasira Hoori',
     role: 'Advisory Board Member',
     image: kamranAhsan,
-    bio: "Nasira Hoori is one of Pakistan’s Leading Executive Search Specialists. She holds 17 years of national and multinational  experience and has been responsible for placing thousands of professionals  in the corporate sector including leading startups in Pakistan.",
+    bio: 'Leading Executive Search Specialist in Pakistan with 17 years of national and multinational experience. Has placed thousands of professionals in the corporate sector, including leading startups in Pakistan.',
     social: {
       linkedin: '#',
       twitter: '#',
       github: '#',
     },
   },
-
 ];
 
 const containerVariants = {

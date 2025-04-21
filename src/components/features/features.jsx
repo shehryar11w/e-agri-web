@@ -21,6 +21,14 @@ import ESettlements from '../../assets/modulesLogos/deal.png';
 import EAnimalFeed from '../../assets/modulesLogos/feed.png';
 
 
+import PlantDoctorMockup from '../../assets/mockups/plantDoctorScreen.png';
+import ELoanMockup from '../../assets/mockups/ELoan.png';
+import EAdvisorMockup from '../../assets/mockups/EAdvisor.png';
+import EMundiMockup from '../../assets/mockups/EMundi.png';
+import EWarehouseMockup from '../../assets/mockups/EWarehouse.png';
+import EPlantDoctorMockup from '../../assets/mockups/plantDoctorScreen.png';
+
+
 const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);  
@@ -33,7 +41,7 @@ const Features = () => {
       title: "E-Advisor",
       description: "AI-powered agricultural intelligence for data-driven farming decisions",
       details: "Our E-Advisor system leverages advanced AI to provide personalized farming recommendations tailored to your specific crops, soil conditions, and local climate. Get real-time insights on crop health, pest detection, and optimal planting times. Our machine learning algorithms analyze historical data, current conditions, and expert knowledge to predict potential issues before they impact your yield. Make data-driven decisions with confidence, optimize resource allocation, and maximize your agricultural productivity. The system continuously learns from your farm's performance data to provide increasingly accurate recommendations over time.",
-      mockup: ELoan,
+      mockup: EAdvisorMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
@@ -41,7 +49,7 @@ const Features = () => {
       title: "E-Market",
       description: "Easy to use marketplace for all things Agri with intelligent buyer-seller matching",
       details: "Our E-Market is an easy-to-use marketplace for all things agricultural. Buyers are intelligently matched with products based on E-Advisor analysis of their unique farmer scenario and needs. The platform ensures secure transactions with comprehensive fraud detection systems that verify all sales for fraudulent activity. Our digital order workflow streamlines the entire process from vendor to buyer, with clear status tracking at every step. Digital payments are integrated for all orders, providing multiple payment options and secure transaction processing. The system maintains complete order history and cash flow management tools to help you track your business performance. Our innovative matching algorithm connects buyers with sellers mid-harvest, ensuring optimal timing for transactions. The platform also facilitates international trade by matching overseas buyers with local sellers, expanding your market reach globally. Detailed product listings include quality specifications, origin information, and certification details to build trust between parties.",
-      mockup: ELoan,
+      mockup: ELoanMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
@@ -49,7 +57,7 @@ const Features = () => {
       title: "Plant Doctor",
       description: "Advanced AI-powered crop health monitoring and disease diagnosis system",
       details: "Diagnose plant diseases instantly with our AI-powered image recognition system that can identify over 500 common plant diseases and nutrient deficiencies. Get detailed treatment recommendations and preventive measures to protect your crops and maximize yields with expert guidance. The system analyzes leaf patterns, color variations, and growth anomalies to detect issues early before they spread. Our database includes region-specific disease information and treatment options that are environmentally sustainable. The Plant Doctor app allows you to take photos of affected plants and receive immediate diagnosis and treatment plans. Regular health reports and trend analysis help you implement preventive measures and improve overall crop resilience.",
-      mockup: ELoan,
+      mockup: PlantDoctorMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
@@ -57,7 +65,7 @@ const Features = () => {
       title: "E-Warehouse",
       description: "Comprehensive warehouse management system with real-time monitoring and tracking",
       details: "Our comprehensive warehouse management system includes digital warehouse reservation based on availability, crop type and storage method by distance. Track crops throughout the supply chain with real-time monitoring and surveillance. Manage deliveries to and from warehouses, and participate in intra-warehouse auctions. Our complete WMS (Warehouse Management System) ensures efficient storage and inventory management with features for temperature control, humidity monitoring, and pest prevention. The system provides detailed analytics on storage utilization, turnover rates, and optimal storage conditions for different crop types. Automated alerts notify you of any environmental changes that could affect stored products. The platform integrates with our logistics network to coordinate seamless transfers between storage facilities and transportation services.",
-      mockup: ELoan,
+      mockup: EWarehouseMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
@@ -65,15 +73,15 @@ const Features = () => {
       title: "E-Auction",
       description: "Transparent digital auction platform for fair market pricing of agricultural products",
       details: "Participate in transparent digital auctions for agricultural products with our advanced bidding system. Set reserve prices, place bids, and track auction status in real-time. Get fair market value for your produce through competitive bidding that connects you directly with buyers. Our auction platform includes features for scheduled auctions, reverse auctions for procurement, and spot market trading. Detailed product information, quality specifications, and delivery terms are clearly displayed for each auction. The system supports various auction formats including English, Dutch, and sealed-bid auctions to accommodate different market needs. Real-time price analytics and historical auction data help you make informed decisions about when to sell and at what price point.",
-      mockup: ELoan,
+      mockup: EMundiMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
-      icon: EAuction,
+      icon: EAuction, // same as ELoan
       title: "E-Loan",
       description: "Tailored agricultural financing solutions with flexible terms and competitive rates",
       details: "Access quick and flexible agricultural loans through our digital platform designed specifically for farmers and agribusinesses. Get competitive interest rates, simplified application process, and transparent terms that align with agricultural production cycles. Our loan products include seasonal financing, equipment loans, and long-term investment capital. The platform uses alternative credit scoring that considers your farming history, crop yields, and market conditions rather than traditional credit metrics. Automated approval processes provide quick decisions, while our repayment schedules are structured around harvest cycles. The system includes features for loan tracking, payment reminders, and financial planning tools to help you manage your agricultural finances effectively. Our partnerships with multiple financial institutions ensure you have access to the best available rates and terms.",
-      mockup: ELoan,
+      mockup: ELoanMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
   ];
@@ -304,11 +312,11 @@ const Features = () => {
               className="flex flex-col md:flex-row min-h-[400px]"
             >
               {/* Mockup Image */}
-              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center">
+              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-xl">
                 <motion.img
                   src={MockupFeatures[currentSlide].mockup}
                   alt={MockupFeatures[currentSlide].title}
-                  className="w-full h-auto max-h-[200px] sm:max-h-[250px] md:max-h-none object-contain"
+                  className="w-full h-auto max-h-[250px] xs:max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-contain drop-shadow-lg"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}

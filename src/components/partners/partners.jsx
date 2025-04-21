@@ -3,15 +3,17 @@ import { motion, useAnimation } from 'framer-motion';
 
 import mite from '../../assets/partners/mite.png';
 import euronet from '../../assets/partners/euronet.png';
-import faysalBank from '../../assets/partners/faysalBank.svg';
+
 import cma from '../../assets/partners/cma.svg';
+import syngenta from '../../assets/partners/syngenta.svg';
+
 const Partners = () => {
 
   const partners = [
     { name: 'MiTe', logo: mite },
     { name: 'Euronet', logo: euronet },
-    { name: 'Faysal Bank', logo: faysalBank },
     { name: 'CMA', logo: cma },
+    { name: 'Syngenta', logo: syngenta },
   ];
 
   const controls = useAnimation();
@@ -105,15 +107,17 @@ const Partners = () => {
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                    className={`w-[140px] h-[80px] object-contain transition-all duration-300 ${
+                      partner.name === 'Syngenta' 
+                        ? 'grayscale opacity-80 dark:opacity-90 hover:grayscale-0 hover:opacity-100' 
+                        : 'grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
+                    }`}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                   />
                 </motion.div>
               ))}
             </div>
-
-         
 
             {/* Second duplicate set for extra smoothness */}
             <div className="flex items-center gap-8">
@@ -129,7 +133,11 @@ const Partners = () => {
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                    className={`w-[140px] h-[80px] object-contain transition-all duration-300 ${
+                      partner.name === 'Syngenta' 
+                        ? 'grayscale opacity-80 dark:opacity-90 hover:grayscale-0 hover:opacity-100' 
+                        : 'grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
+                    }`}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                   />
