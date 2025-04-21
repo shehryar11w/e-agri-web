@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf, FaChartLine, FaUsers, FaHandshake } from 'react-icons/fa';
 
-import Homescreen from '../../assets/HomeScreen.png';
+import Homescreen from '../../assets/mockups/home.png';
 
 const About = () => {
 

@@ -26,7 +26,7 @@ import ELoanMockup from '../../assets/mockups/ELoan.png';
 import EAdvisorMockup from '../../assets/mockups/EAdvisor.png';
 import EMundiMockup from '../../assets/mockups/EMundi.png';
 import EWarehouseMockup from '../../assets/mockups/EWarehouse.png';
-import EPlantDoctorMockup from '../../assets/mockups/plantDoctorScreen.png';
+
 
 
 const Features = () => {
@@ -90,7 +90,7 @@ const Features = () => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % MockupFeatures.length);
-    }, 3000);
+    }, 9000);
     return () => clearInterval(interval);
   }, [MockupFeatures.length]);
 

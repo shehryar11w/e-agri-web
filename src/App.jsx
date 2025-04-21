@@ -14,7 +14,7 @@ import LanguageSwitcher from './components/language-switcher/language-switcher'
 import Download from './components/download/download'
 import Contact from './components/contact/contact'
 import ComingSoon from './components/home/ComingSoon'
-
+import ChatClient from './components/chat/chatClient'
 const App = () => {
   return (
     <ThemeProvider>
@@ -24,6 +24,7 @@ const App = () => {
         </Navbar>
         <Header />
         <main className="flex-1 pt-[70px]">
+          <ChatClient />
           <Home />
           <Features />  
           <About />

@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import ceoImage from '../../assets/ceo.png';
 import cooImage from '../../assets/coo.png';
-import kamranAhsan from '../../assets/kamranAhsan.jpg';
+import kamranAhsan from '../../assets/KA.jpg';
 import abdulRehman from '../../assets/AbdulRehman.jpg';
 const teamData = [
   {
     name: 'Adnan Syed',
-    role: 'CEO & Chairman',
+    role: 'Founder & CEO',
     image: ceoImage,
     bio: 'Tech entrepreneur with 25+ years of experience in scaling innovative ventures across the U.S. Returns to Pakistan to combine technical expertise with strategic vision to transform agriculture through digital innovation.',
     social: {
