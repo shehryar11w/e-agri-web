@@ -16,113 +16,113 @@ const ComingSoon = () => {
 
   const upcomingFeatures = [
     {
-      title: 'E Learn',
-      description: 'Interactive agricultural learning platform',
+      title: t('comingSoon.features.eLearn.title'),
+      description: t('comingSoon.features.eLearn.description'),
       icon: <FaGraduationCap className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaBook className="w-5 h-5" />, text: 'Interactive Courses' },
-        { icon: <FaVideo className="w-5 h-5" />, text: 'Video Tutorials' },
-        { icon: <FaChartLine className="w-5 h-5" />, text: 'Progress Tracking' }
+        { icon: <FaBook className="w-5 h-5" />, text: t('comingSoon.features.eLearn.capabilities.interactiveCourses') },
+        { icon: <FaVideo className="w-5 h-5" />, text: t('comingSoon.features.eLearn.capabilities.videoTutorials') },
+        { icon: <FaChartLine className="w-5 h-5" />, text: t('comingSoon.features.eLearn.capabilities.progressTracking') }
       ]
     },
     {
-      title: 'Community Classifieds',
-      description: 'Buy, sell, and trade within the farming community',
+      title: t('comingSoon.features.communityClassifieds.title'),
+      description: t('comingSoon.features.communityClassifieds.description'),
       icon: <FaShoppingCart className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaHandshake className="w-5 h-5" />, text: 'Secure Transactions' },
-        { icon: <FaSearch className="w-5 h-5" />, text: 'Advanced Search' },
-        { icon: <FaGlobe className="w-5 h-5" />, text: 'Local Marketplace' }
+        { icon: <FaHandshake className="w-5 h-5" />, text: t('comingSoon.features.communityClassifieds.capabilities.secureTransactions') },
+        { icon: <FaSearch className="w-5 h-5" />, text: t('comingSoon.features.communityClassifieds.capabilities.advancedSearch') },
+        { icon: <FaGlobe className="w-5 h-5" />, text: t('comingSoon.features.communityClassifieds.capabilities.localMarketplace') }
       ]
     },
     {
-      title: 'AgriPhone',
-      description: 'Specialized farming device with fingerprint scanner, LoRaWAN connectivity, and soil analytics',
+      title: t('comingSoon.features.agriPhone.title'),
+      description: t('comingSoon.features.agriPhone.description'),
       icon: <FaPhoneAlt className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaFingerprint className="w-5 h-5" />, text: 'Fingerprint Scanner' },
-        { icon: <FaNetworkWired className="w-5 h-5" />, text: 'LoRaWAN Connectivity' },
-        { icon: <FaFlask className="w-5 h-5" />, text: 'Multi-mode Soil Analytics' }
+        { icon: <FaFingerprint className="w-5 h-5" />, text: t('comingSoon.features.agriPhone.capabilities.fingerprintScanner') },
+        { icon: <FaNetworkWired className="w-5 h-5" />, text: t('comingSoon.features.agriPhone.capabilities.loraWanConnectivity') },
+        { icon: <FaFlask className="w-5 h-5" />, text: t('comingSoon.features.agriPhone.capabilities.soilAnalytics') }
       ]
     },
     {
-      title: 'IoT Soil Sensors',
-      description: 'Real-time soil monitoring and analysis',
+      title: t('comingSoon.features.iotSoilSensors.title'),
+      description: t('comingSoon.features.iotSoilSensors.description'),
       icon: <FaThermometerHalf className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaCloud className="w-5 h-5" />, text: 'Cloud Integration' },
-        { icon: <FaDatabase className="w-5 h-5" />, text: 'Data Analytics' },
-        { icon: <FaChartBar className="w-5 h-5" />, text: 'Trend Visualization' }
+        { icon: <FaCloud className="w-5 h-5" />, text: t('comingSoon.features.iotSoilSensors.capabilities.cloudIntegration') },
+        { icon: <FaDatabase className="w-5 h-5" />, text: t('comingSoon.features.iotSoilSensors.capabilities.dataAnalytics') },
+        { icon: <FaChartBar className="w-5 h-5" />, text: t('comingSoon.features.iotSoilSensors.capabilities.trendVisualization') }
       ]
     },
     {
-      title: 'Drone Services',
-      description: 'Aerial monitoring and spraying services',
+      title: t('comingSoon.features.droneServices.title'),
+      description: t('comingSoon.features.droneServices.description'),
       icon: <FaPlane className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaSatellite className="w-5 h-5" />, text: 'Aerial Mapping' },
-        { icon: <FaLeaf className="w-5 h-5" />, text: 'Precision Spraying' },
-        { icon: <FaSeedling className="w-5 h-5" />, text: 'Crop Monitoring' }
+        { icon: <FaSatellite className="w-5 h-5" />, text: t('comingSoon.features.droneServices.capabilities.aerialMapping') },
+        { icon: <FaLeaf className="w-5 h-5" />, text: t('comingSoon.features.droneServices.capabilities.precisionSpraying') },
+        { icon: <FaSeedling className="w-5 h-5" />, text: t('comingSoon.features.droneServices.capabilities.cropMonitoring') }
       ]
     },
     {
-      title: 'Latest News',
-      description: 'Stay updated with agricultural news',
+      title: t('comingSoon.features.latestNews.title'),
+      description: t('comingSoon.features.latestNews.description'),
       icon: <FaNewspaper className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaGlobe className="w-5 h-5" />, text: 'Global Updates' },
-        { icon: <FaSearch className="w-5 h-5" />, text: 'Customized Feeds' },
-        { icon: <FaLightbulb className="w-5 h-5" />, text: 'Market Insights' }
+        { icon: <FaGlobe className="w-5 h-5" />, text: t('comingSoon.features.latestNews.capabilities.globalUpdates') },
+        { icon: <FaSearch className="w-5 h-5" />, text: t('comingSoon.features.latestNews.capabilities.customizedFeeds') },
+        { icon: <FaLightbulb className="w-5 h-5" />, text: t('comingSoon.features.latestNews.capabilities.marketInsights') }
       ]
     },
     {
-      title: 'New Research',
-      description: 'Access to latest agricultural research',
+      title: t('comingSoon.features.newResearch.title'),
+      description: t('comingSoon.features.newResearch.description'),
       icon: <FaMicroscope className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaDatabase className="w-5 h-5" />, text: 'Research Database' },
-        { icon: <FaChartLine className="w-5 h-5" />, text: 'Data Analysis' },
-        { icon: <FaCog className="w-5 h-5" />, text: 'Innovation Tracking' }
+        { icon: <FaDatabase className="w-5 h-5" />, text: t('comingSoon.features.newResearch.capabilities.researchDatabase') },
+        { icon: <FaChartLine className="w-5 h-5" />, text: t('comingSoon.features.newResearch.capabilities.dataAnalysis') },
+        { icon: <FaCog className="w-5 h-5" />, text: t('comingSoon.features.newResearch.capabilities.innovationTracking') }
       ]
     },
     {
-      title: 'Community Connections',
-      description: 'Connect with fellow farmers and experts',
+      title: t('comingSoon.features.communityConnections.title'),
+      description: t('comingSoon.features.communityConnections.description'),
       icon: <FaUsers className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaUserFriends className="w-5 h-5" />, text: 'Expert Network' },
-        { icon: <FaComments className="w-5 h-5" />, text: 'Discussion Forums' },
-        { icon: <FaHandshake className="w-5 h-5" />, text: 'Collaboration Tools' }
+        { icon: <FaUserFriends className="w-5 h-5" />, text: t('comingSoon.features.communityConnections.capabilities.expertNetwork') },
+        { icon: <FaComments className="w-5 h-5" />, text: t('comingSoon.features.communityConnections.capabilities.discussionForums') },
+        { icon: <FaHandshake className="w-5 h-5" />, text: t('comingSoon.features.communityConnections.capabilities.collaborationTools') }
       ]
     },
     {
-      title: 'Agentic AI',
-      description: 'AI-powered farming assistance and recommendations',
+      title: t('comingSoon.features.agenticAI.title'),
+      description: t('comingSoon.features.agenticAI.description'),
       icon: <FaRobot className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaBrain className="w-5 h-5" />, text: 'Smart Recommendations' },
-        { icon: <FaChartBar className="w-5 h-5" />, text: 'Predictive Analytics' },
-        { icon: <FaCog className="w-5 h-5" />, text: 'Automated Planning' }
+        { icon: <FaBrain className="w-5 h-5" />, text: t('comingSoon.features.agenticAI.capabilities.smartRecommendations') },
+        { icon: <FaChartBar className="w-5 h-5" />, text: t('comingSoon.features.agenticAI.capabilities.predictiveAnalytics') },
+        { icon: <FaCog className="w-5 h-5" />, text: t('comingSoon.features.agenticAI.capabilities.automatedPlanning') }
       ]
     },
     {
-      title: 'E-Food Supply',
-      description: 'Supply chain management for agricultural products',
+      title: t('comingSoon.features.eFoodSupply.title'),
+      description: t('comingSoon.features.eFoodSupply.description'),
       icon: <FaUtensils className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaTruck className="w-5 h-5" />, text: 'Logistics Tracking' },
-        { icon: <FaWarehouse className="w-5 h-5" />, text: 'Inventory Management' },
-        { icon: <FaClipboardCheck className="w-5 h-5" />, text: 'Quality Control' }
+        { icon: <FaTruck className="w-5 h-5" />, text: t('comingSoon.features.eFoodSupply.capabilities.logisticsTracking') },
+        { icon: <FaWarehouse className="w-5 h-5" />, text: t('comingSoon.features.eFoodSupply.capabilities.inventoryManagement') },
+        { icon: <FaClipboardCheck className="w-5 h-5" />, text: t('comingSoon.features.eFoodSupply.capabilities.qualityControl') }
       ]
     },
     {
-      title: 'Animal Feed',
-      description: 'Feed management system for livestock',
+      title: t('comingSoon.features.animalFeed.title'),
+      description: t('comingSoon.features.animalFeed.description'),
       icon: <FaSeedling className="w-8 h-8" />,
       capabilities: [
-        { icon: <FaDatabase className="w-5 h-5" />, text: 'Feed Inventory' },
-        { icon: <FaChartLine className="w-5 h-5" />, text: 'Consumption Tracking' },
-        { icon: <FaClipboardCheck className="w-5 h-5" />, text: 'Nutrition Planning' }
+        { icon: <FaDatabase className="w-5 h-5" />, text: t('comingSoon.features.animalFeed.capabilities.feedInventory') },
+        { icon: <FaChartLine className="w-5 h-5" />, text: t('comingSoon.features.animalFeed.capabilities.consumptionTracking') },
+        { icon: <FaClipboardCheck className="w-5 h-5" />, text: t('comingSoon.features.animalFeed.capabilities.nutritionPlanning') }
       ]
     }
   ];
@@ -154,10 +154,10 @@ const ComingSoon = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Coming Soon
+            {t('comingSoon.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Exciting new features coming to enhance your farming experience
+            {t('comingSoon.description')}
           </p>
         </motion.div>
 
@@ -208,7 +208,7 @@ const ComingSoon = () => {
                     {feature.capabilities && (
                       <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                         <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                          Key Features:
+                          {t('comingSoon.keyFeatures')}:
                         </h4>
                         <div className="flex flex-wrap gap-3">
                           {feature.capabilities.map((capability, idx) => (

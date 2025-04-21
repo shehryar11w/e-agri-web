@@ -21,6 +21,8 @@
   "features": {
     "title": "Our Features",
     "subtitle": "See how our comprehensive toolset can transform your agricultural operations",
+    "learnMore": "Learn More",
+    "clickToLearnMore": "Click to learn more",
     "eAdvisor": {
       "title": "E-Advisor",
       "description": "AI-Powered Agricultural Intelligence",
@@ -90,11 +92,27 @@
       "title": "Animal Feed",
       "description": "Feed Management System",
       "details": "Digitally manage your livestock feed inventory and distribution. Monitor feed quality, track consumption, and optimize feed schedules. Ensure proper nutrition and cost-effective feed management."
+    },
+    "nplRestructure": {
+      "title": "NPL Restructure",
+      "description": "Comprehensive non-performing loan management",
+      "details": "Effectively manage and restructure non-performing loans with our specialized platform. Analyze loan performance, develop restructuring plans, and track recovery progress. Our system provides tools for risk assessment, payment scheduling, and compliance monitoring."
+    },
+    "lrms": {
+      "title": "LRMS",
+      "description": "Land record management system",
+      "details": "Maintain accurate and secure land records with our digital management system. Track property ownership, land use, and agricultural activities. Ensure compliance with land regulations and facilitate transparent land transactions."
     }
   },
   "download": {
     "title": "Download E-Agri App",
-    "description": "Get access to all our features on the go. Download our mobile app and transform your farming experience today."
+    "description": "Get access to all our features on the go. Download our mobile app and transform your farming experience today.",
+    "buttons": {
+      "getItOn": "GET IT ON",
+      "googlePlay": "Google Play",
+      "downloadOnThe": "DOWNLOAD ON THE",
+      "appStore": "App Store"
+    }
   },
   "contact": {
     "title": "Contact Us",
@@ -118,5 +136,231 @@
       "success": "Thank you for your message! We'll get back to you soon.",
       "error": "Please complete the reCAPTCHA verification."
     }
+  },
+  "about": {
+    "title": "Revolutionizing Agriculture in Pakistan",
+    "description": "Our platform combines traditional agricultural knowledge with cutting-edge technology to transform farming practices across Pakistan. We provide farmers with AI-powered insights, real-time weather monitoring, and direct access to agricultural experts.",
+    "imageAlt": "Pakistani farmers using E-Agri app",
+    "features": {
+      "mission": {
+        "title": "Our Mission",
+        "description": "To empower farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "description": "To transform Pakistan's agricultural sector into a modern, efficient, and sustainable industry that feeds the globe."
+      },
+      "team": {
+        "title": "Our Team",
+        "description": "A diverse team of agricultural experts, technologists, and farmers working together to revolutionize farming in Pakistan."
+      },
+      "impact": {
+        "title": "Our Impact",
+        "description": "Helping thousands of farmers increase their yields, reduce costs, and make data-driven decisions for better farming outcomes."
+      }
+    }
+  },
+  "team": {
+        "title": "Meet Our Team",
+        "description": "The passionate people behind our success",
+        "adnanSyed": {
+          "name": "Adnan Syed",
+          "role": "Founder and CEO",
+          "bio": "Tech entrepreneur with 25+ years of experience in the USA, specializing in scaling modern ventures. Back in Pakistan, combining technical expertise and strategic vision to transform agriculture through digital innovation."
+        },
+        "shehzadMakhani": {
+          "name": "Shehzad Makhani",
+          "role": "Chief Operating Officer",
+          "bio": "Over two decades of experience in operations, risk management, and financial systems as COO at Agri. Previously served as Chief Risk Officer and Head of Operations at Pakistan Mercantile Exchange (PMEX)."
+        },
+        "kamranAhsan": {
+          "name": "Professor Dr. Kamran Ahsan",
+          "role": "Advisory Board Member",
+          "bio": "Dean of Engineering at MiTE, PhD from Staffordshire University UK. Distinguished computer scientist with multiple patents and 100+ publications in Information Systems and Mobile Technology. Passionate about technology applications in agriculture."
+        },
+        "abdulRehman": {
+          "name": "Professor Abdul Rehman Mahmood",
+          "role": "Advisory Board Member",
+          "bio": "Senior Technology Consultant and Assistant Professor at FAST-NUCES (Computer Science), with 25+ years in software development. Expert in smart farming solutions, project management, IT auditing, and security."
+        },
+        "nasiraHoori": {
+          "name": "Nasira Hoori",
+          "role": "Advisory Board Member",
+          "bio": "Renowned executive search specialist with 17 years of national and multinational experience in Pakistan. Has placed thousands of professionals in the corporate sector, including Pakistan's leading startups."
+        }
+      },
+  "partners": {
+    "title": "Our Partners",
+    "description": "Collaborating with industry leaders to revolutionize agriculture"
+  },
+  "timeline": {
+    "title": "Our Journey",
+    "description": "The roadmap to revolutionizing agriculture in Pakistan",
+    "events": [
+      {
+        "year": "September 2024",
+        "title": "Inception",
+        "description": "Initial idea and concept development of E-Agri platform."
+      },
+      {
+        "year": "October 2024",
+        "title": "Research",
+        "description": "Comprehensive market research and stakeholder analysis."
+      },
+      {
+        "year": "November 2024",
+        "title": "Initial Framework",
+        "description": "Development of core platform architecture and framework."
+      },
+      {
+        "year": "December 2024",
+        "title": "POC",
+        "description": "Proof of Concept development and initial testing."
+      },
+      {
+        "year": "January 2025",
+        "title": "Commerce Platform",
+        "description": "Launch of the e-commerce platform for agricultural products."
+      },
+      {
+        "year": "February 2025",
+        "title": "Warehouse & BPR",
+        "description": "Warehouse designs and Business Process Reengineering implementation."
+      },
+      {
+        "year": "March 2025",
+        "title": "Precision Farming",
+        "description": "Implementation of precision farming and diagnostics modules."
+      },
+      {
+        "year": "April 2025",
+        "title": "Official Launch",
+        "description": "Official platform launch with comprehensive features."
+      },
+      {
+        "year": "Current",
+        "title": "Expansion Phase",
+        "description": "Onboarding banks, vendors, farmers and expanding our team of experts for national integrations with all stakeholders."
+      }
+    ]
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "description": "Exciting new features coming to enhance your farming experience",
+    "keyFeatures": "Key Features",
+    "features": {
+      "eLearn": {
+        "title": "E Learn",
+        "description": "Interactive agricultural learning platform",
+        "capabilities": {
+          "interactiveCourses": "Interactive Courses",
+          "videoTutorials": "Video Tutorials",
+          "progressTracking": "Progress Tracking"
+        }
+      },
+      "communityClassifieds": {
+        "title": "Community Classifieds",
+        "description": "Buy, sell, and trade within the farming community",
+        "capabilities": {
+          "secureTransactions": "Secure Transactions",
+          "advancedSearch": "Advanced Search",
+          "localMarketplace": "Local Marketplace"
+        }
+      },
+      "agriPhone": {
+        "title": "AgriPhone",
+        "description": "Specialized farming device with fingerprint scanner, LoRaWAN connectivity, and soil analytics",
+        "capabilities": {
+          "fingerprintScanner": "Fingerprint Scanner",
+          "loraWanConnectivity": "LoRaWAN Connectivity",
+          "soilAnalytics": "Multi-mode Soil Analytics"
+        }
+      },
+      "iotSoilSensors": {
+        "title": "IoT Soil Sensors",
+        "description": "Real-time soil monitoring and analysis",
+        "capabilities": {
+          "cloudIntegration": "Cloud Integration",
+          "dataAnalytics": "Data Analytics",
+          "trendVisualization": "Trend Visualization"
+        }
+      },
+      "droneServices": {
+        "title": "Drone Services",
+        "description": "Aerial monitoring and spraying services",
+        "capabilities": {
+          "aerialMapping": "Aerial Mapping",
+          "precisionSpraying": "Precision Spraying",
+          "cropMonitoring": "Crop Monitoring"
+        }
+      },
+      "latestNews": {
+        "title": "Latest News",
+        "description": "Stay updated with agricultural news",
+        "capabilities": {
+          "globalUpdates": "Global Updates",
+          "customizedFeeds": "Customized Feeds",
+          "marketInsights": "Market Insights"
+        }
+      },
+      "newResearch": {
+        "title": "New Research",
+        "description": "Access to latest agricultural research",
+        "capabilities": {
+          "researchDatabase": "Research Database",
+          "dataAnalysis": "Data Analysis",
+          "innovationTracking": "Innovation Tracking"
+        }
+      },
+      "communityConnections": {
+        "title": "Community Connections",
+        "description": "Connect with fellow farmers and experts",
+        "capabilities": {
+          "expertNetwork": "Expert Network",
+          "discussionForums": "Discussion Forums",
+          "collaborationTools": "Collaboration Tools"
+        }
+      },
+      "agenticAI": {
+        "title": "Agentic AI",
+        "description": "AI-powered farming assistance and recommendations",
+        "capabilities": {
+          "smartRecommendations": "Smart Recommendations",
+          "predictiveAnalytics": "Predictive Analytics",
+          "automatedPlanning": "Automated Planning"
+        }
+      },
+      "eFoodSupply": {
+        "title": "E-Food Supply",
+        "description": "Supply chain management for agricultural products",
+        "capabilities": {
+          "logisticsTracking": "Logistics Tracking",
+          "inventoryManagement": "Inventory Management",
+          "qualityControl": "Quality Control"
+        }
+      },
+      "animalFeed": {
+        "title": "Animal Feed",
+        "description": "Feed management system for livestock",
+        "capabilities": {
+          "feedInventory": "Feed Inventory",
+          "consumptionTracking": "Consumption Tracking",
+          "nutritionPlanning": "Nutrition Planning"
+        }
+      }
+    }
+  },
+  "footer": {
+    "title": "E-Agri",
+    "description": "Revolutionizing agriculture in Pakistan",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contact": "Contact",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "phone": "+92 300 1234567",
+    "email": "info@e-agri.com",
+    "address": "Karachi, Pakistan",
+    "copyright": "© 2024 E-Agri. All rights reserved."
   }
 } 

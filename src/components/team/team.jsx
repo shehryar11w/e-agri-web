@@ -1,16 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import ceoImage from '../../assets/ceo.png';
 import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/KA.jpg';
 import abdulRehman from '../../assets/AbdulRehman.jpg';
+
 const teamData = [
   {
-    name: 'Adnan Syed',
-    role: 'Founder & CEO',
+    name: 'team.adnanSyed.name',
+    role: 'team.adnanSyed.role',
     image: ceoImage,
-    bio: 'Tech entrepreneur with 25+ years of experience in scaling innovative ventures across the U.S. Returns to Pakistan to combine technical expertise with strategic vision to transform agriculture through digital innovation.',
+    bio: 'team.adnanSyed.bio',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -18,10 +20,10 @@ const teamData = [
     },
   },
   {
-    name: 'Shehzad Makhani',
-    role: 'COO',
+    name: 'team.shehzadMakhani.name',
+    role: 'team.shehzadMakhani.role',
     image: cooImage,
-    bio: 'Chief Operating Officer at E-Agri with over two decades of experience in operations, risk management, and financial systems. Previously served as Chief Risk Officer and Head of Operations at the Pakistan Mercantile Exchange (PMEX).',
+    bio: 'team.shehzadMakhani.bio',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -29,10 +31,10 @@ const teamData = [
     },
   },
   {
-    name: 'Prof. Dr. Kamran Ahsan',
-    role: 'Advisory Board Member',
+    name: 'team.kamranAhsan.name',
+    role: 'team.kamranAhsan.role',
     image: kamranAhsan,
-    bio: 'Dean of Engineering at MiTE with a PhD from Stafford University UK. Distinguished Computer Scientist with multiple patents and 100+ publications in Information Systems and Mobile Technology. Passionate about applying technology to agriculture.',
+    bio: 'team.kamranAhsan.bio',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -40,21 +42,21 @@ const teamData = [
     },
   },
   {
-    name: 'Prof. Abdul Rehman Mehmood',
-    role: 'Advisory Board Member',
+    name: 'team.abdulRehman.name',
+    role: 'team.abdulRehman.role',
     image: abdulRehman,
-    bio: 'Senior Technology Consultant and Assistant Professor at FAST-NU (Computer Science) with 25+ years of experience in software development. Expert in smart farming solutions, project management, IT auditing, and security.',
+    bio: 'team.abdulRehman.bio',
     social: {
       linkedin: '#',
-      twitter: '#',
+      twitter: '#', 
       github: '#',
     },
   },
   {
-    name: 'Nasira Hoori',
-    role: 'Advisory Board Member',
+    name: 'team.nasiraHoori.name',
+    role: 'team.nasiraHoori.role',
     image: kamranAhsan,
-    bio: 'Leading Executive Search Specialist in Pakistan with 17 years of national and multinational experience. Has placed thousands of professionals in the corporate sector, including leading startups in Pakistan.',
+    bio: 'team.nasiraHoori.bio',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -86,6 +88,7 @@ const itemVariants = {
 };
 
 const Team = () => {
+  const { t } = useTranslation();
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
@@ -101,10 +104,10 @@ const Team = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            Meet Our Team
+            {t('team.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            The passionate individuals behind our success
+            {t('team.description')}
           </p>
         </motion.div>
 
@@ -124,7 +127,7 @@ const Team = () => {
               <div className="relative w-full pt-[100%] overflow-hidden group">
                 <img 
                   src={member.image} 
-                  alt={member.name}
+                  alt={t(member.name)}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-emerald-900/80 dark:bg-emerald-950/80 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -157,11 +160,11 @@ const Team = () => {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{member.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{t(member.name)}</h3>
                 <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-semibold mb-4">
-                  {member.role}
+                  {t(member.role)}
                 </span>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{member.bio}</p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t(member.bio)}</p>
               </div>
             </motion.div>
           ))}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaCloud, FaChevronLeft, FaChevronRight, FaShoppingCart, FaTractor, FaWarehouse, FaChartLine } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 
 import ELoan from '../../assets/mockups/E-Loan.png';
@@ -34,53 +35,54 @@ const Features = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);  
   const [currentSlide, setCurrentSlide] = useState(0);
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation();
 
   const MockupFeatures = [
     { 
       icon: EAdvisor,
-      title: "E-Advisor",
-      description: "AI-powered agricultural intelligence for data-driven farming decisions",
-      details: "Our E-Advisor system leverages advanced AI to provide personalized farming recommendations tailored to your specific crops, soil conditions, and local climate. Get real-time insights on crop health, pest detection, and optimal planting times. Our machine learning algorithms analyze historical data, current conditions, and expert knowledge to predict potential issues before they impact your yield. Make data-driven decisions with confidence, optimize resource allocation, and maximize your agricultural productivity. The system continuously learns from your farm's performance data to provide increasingly accurate recommendations over time.",
+      title: t('features.eAdvisor.title'),
+      description: t('features.eAdvisor.description'),
+      details: t('features.eAdvisor.details'),
       mockup: EAdvisorMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EMarket,
-      title: "E-Market",
-      description: "Easy to use marketplace for all things Agri with intelligent buyer-seller matching",
-      details: "Our E-Market is an easy-to-use marketplace for all things agricultural. Buyers are intelligently matched with products based on E-Advisor analysis of their unique farmer scenario and needs. The platform ensures secure transactions with comprehensive fraud detection systems that verify all sales for fraudulent activity. Our digital order workflow streamlines the entire process from vendor to buyer, with clear status tracking at every step. Digital payments are integrated for all orders, providing multiple payment options and secure transaction processing. The system maintains complete order history and cash flow management tools to help you track your business performance. Our innovative matching algorithm connects buyers with sellers mid-harvest, ensuring optimal timing for transactions. The platform also facilitates international trade by matching overseas buyers with local sellers, expanding your market reach globally. Detailed product listings include quality specifications, origin information, and certification details to build trust between parties.",
+      title: t('features.eMarket.title'),
+      description: t('features.eMarket.description'),
+      details: t('features.eMarket.details'),
       mockup: ELoanMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EPlantDoctor,
-      title: "Plant Doctor",
-      description: "Advanced AI-powered crop health monitoring and disease diagnosis system",
-      details: "Diagnose plant diseases instantly with our AI-powered image recognition system that can identify over 500 common plant diseases and nutrient deficiencies. Get detailed treatment recommendations and preventive measures to protect your crops and maximize yields with expert guidance. The system analyzes leaf patterns, color variations, and growth anomalies to detect issues early before they spread. Our database includes region-specific disease information and treatment options that are environmentally sustainable. The Plant Doctor app allows you to take photos of affected plants and receive immediate diagnosis and treatment plans. Regular health reports and trend analysis help you implement preventive measures and improve overall crop resilience.",
+      title: t('features.plantDoctor.title'),
+      description: t('features.plantDoctor.description'),
+      details: t('features.plantDoctor.details'),
       mockup: PlantDoctorMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       icon: EWarehouse,
-      title: "E-Warehouse",
-      description: "Comprehensive warehouse management system with real-time monitoring and tracking",
-      details: "Our comprehensive warehouse management system includes digital warehouse reservation based on availability, crop type and storage method by distance. Track crops throughout the supply chain with real-time monitoring and surveillance. Manage deliveries to and from warehouses, and participate in intra-warehouse auctions. Our complete WMS (Warehouse Management System) ensures efficient storage and inventory management with features for temperature control, humidity monitoring, and pest prevention. The system provides detailed analytics on storage utilization, turnover rates, and optimal storage conditions for different crop types. Automated alerts notify you of any environmental changes that could affect stored products. The platform integrates with our logistics network to coordinate seamless transfers between storage facilities and transportation services.",
+      title: t('features.eWarehouse.title'),
+      description: t('features.eWarehouse.description'),
+      details: t('features.eWarehouse.details'),
       mockup: EWarehouseMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
       icon: EAuction,
-      title: "E-Auction",
-      description: "Transparent digital auction platform for fair market pricing of agricultural products",
-      details: "Participate in transparent digital auctions for agricultural products with our advanced bidding system. Set reserve prices, place bids, and track auction status in real-time. Get fair market value for your produce through competitive bidding that connects you directly with buyers. Our auction platform includes features for scheduled auctions, reverse auctions for procurement, and spot market trading. Detailed product information, quality specifications, and delivery terms are clearly displayed for each auction. The system supports various auction formats including English, Dutch, and sealed-bid auctions to accommodate different market needs. Real-time price analytics and historical auction data help you make informed decisions about when to sell and at what price point.",
+      title: t('features.eAuction.title'),
+      description: t('features.eAuction.description'),
+      details: t('features.eAuction.details'),
       mockup: EMundiMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     { 
       icon: EAuction, // same as ELoan
-      title: "E-Loan",
-      description: "Tailored agricultural financing solutions with flexible terms and competitive rates",
-      details: "Access quick and flexible agricultural loans through our digital platform designed specifically for farmers and agribusinesses. Get competitive interest rates, simplified application process, and transparent terms that align with agricultural production cycles. Our loan products include seasonal financing, equipment loans, and long-term investment capital. The platform uses alternative credit scoring that considers your farming history, crop yields, and market conditions rather than traditional credit metrics. Automated approval processes provide quick decisions, while our repayment schedules are structured around harvest cycles. The system includes features for loan tracking, payment reminders, and financial planning tools to help you manage your agricultural finances effectively. Our partnerships with multiple financial institutions ensure you have access to the best available rates and terms.",
+      title: t('features.eLoan.title'),
+      description: t('features.eLoan.description'),
+      details: t('features.eLoan.details'),
       mockup: ELoanMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
@@ -97,62 +99,55 @@ const Features = () => {
   const features = [
     {
       icon: EMundi,
-      title: "E-Orders",
-      description: "Streamlined order management",
-      details: "Manage your agricultural orders efficiently with our digital platform. Track order status, handle bulk orders, and automate order processing. Reduce errors and improve customer satisfaction.",
+      title: t('features.eOrders.title'),
+      description: t('features.eOrders.description'),
+      details: t('features.eOrders.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       key: 'eRental',
       icon: ERental,
-      title: "E-Rental",
-      description: "Equipment rental marketplace",
-      details: "Access a wide range of agricultural equipment through our rental platform. Find available machinery, compare rates, and manage rentals digitally. Optimize equipment costs and improve operational efficiency.",
+      title: t('features.eRental.title'),
+      description: t('features.eRental.description'),
+      details: t('features.eRental.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       key: 'eTransport',
       icon: ETransport,
-      title: "E-Transport",
-      description: "Smart logistics management",
-      details: "Streamline your agricultural logistics with our transport management system. Track shipments, optimize routes, and manage delivery schedules. Ensure timely and cost-effective product delivery.",
+      title: t('features.eTransport.title'),
+      description: t('features.eTransport.description'),
+      details: t('features.eTransport.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       key: 'eMunshi',
       icon: EMunshi,
-      title: "E-Munshi",
-      description: "Digital record keeping",
-      details: "Maintain accurate digital records of your agricultural operations. Track transactions, manage documentation, and generate reports. Stay organized and compliant with digital record-keeping.",
+      title: t('features.eMunshi.title'),
+      description: t('features.eMunshi.description'),
+      details: t('features.eMunshi.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
       key: 'settlements',
       icon: ESettlements,
-      title: "Settlements",
-      description: "Automated payment processing",
-      details: "Process payments and settlements efficiently with our digital platform. Handle multiple payment methods, track transactions, and manage financial records. Ensure smooth and secure financial operations.",
+      title: t('features.settlements.title'),
+      description: t('features.settlements.description'),
+      details: t('features.settlements.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
-      icon: <FaCloud />,
-      title: "Backend Feature",
-      description: "Real-time weather data and forecasts",
-      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      icon: <FaChartLine />,
+      title: t('features.nplRestructure.title'),
+      description: t('features.nplRestructure.description'),
+      details: t('features.nplRestructure.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
-      icon: <FaCloud />,
-      title: "Backend Feature",
-      description: "Real-time weather data and forecasts",
-      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
-      color: "from-white to-white dark:from-white dark:to-white"
-    },
-    {
-      icon: <FaCloud />,
-      title: "Backend Feature",
-      description: "Real-time weather data and forecasts",
-      details: "Get accurate weather forecasts and alerts specific to your farm location. Plan activities based on weather conditions and protect your crops from adverse weather events.",
+      icon: <FaWarehouse />,
+      title: t('features.lrms.title'),
+      description: t('features.lrms.description'),
+      details: t('features.lrms.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
   ];
@@ -294,9 +289,9 @@ const Features = () => {
           className="text-center mb-16"
           variants={itemVariants}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Features</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('features.title')}</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Discover how our platform can transform your farming experience
+            {t('features.subtitle')}
           </p>
         </motion.div>
 
@@ -351,7 +346,7 @@ const Features = () => {
                     whileTap={{ scale: 0.95 }}
                     onClick={() => openModal(MockupFeatures[currentSlide])}
                   >
-                    Learn More
+                    {t('features.learnMore', 'Learn More')}
                   </motion.button>
                 </motion.div>
               </div>
@@ -446,7 +441,7 @@ const Features = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                Click to learn more
+                {t('features.clickToLearnMore', 'Click to learn more')}
               </motion.div>
             </motion.div>
           ))}

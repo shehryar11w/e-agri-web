@@ -8,7 +8,8 @@ const LanguageSwitcher = () => {
   const languages = [
     { code: 'en', name: 'English' },
     { code: 'ur', name: 'اردو' },
-    { code: 'sd', name: 'سنڌي' }
+    { code: 'sd', name: 'سنڌي' },
+    { code: 'ps', name: 'پشتو' }
   ];
 
   const changeLanguage = (lng) => {

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaArrowRight, FaLeaf, FaTractor, FaSeedling, FaHandshake } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import Dashboard from '../../assets/db.png';
+import Dashboard from '../../assets/dashboard.png';
 import HeroBkg from '../../assets/HeroBkg.png';
 
 const Hero = () => {

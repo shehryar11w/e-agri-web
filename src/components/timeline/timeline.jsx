@@ -1,87 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { FaSeedling, FaTractor, FaChartLine, FaHandshake, FaLightbulb, FaFlask, FaWarehouse, FaLeaf, FaRocket } from 'react-icons/fa';
 
-const timelineData = [
-  {
-    year: 'September 2024',
-    title: 'Inception',
-    description: 'Initial idea and concept development of E-Agri platform.',
-    icon: FaLightbulb,
-  },
-  {
-    year: 'October 2024',
-    title: 'Research',
-    description: 'Comprehensive market research and stakeholder analysis.',
-    icon: FaFlask,
-  },
-  {
-    year: 'November 2024',
-    title: 'Initial Framework',
-    description: 'Development of core platform architecture and framework.',
-    icon: FaChartLine,
-  },
-  {
-    year: 'December 2024',
-    title: 'POC',
-    description: 'Proof of Concept development and initial testing.',
-    icon: FaSeedling,
-  },
-  {
-    year: 'January 2025',
-    title: 'Commerce Platform',
-    description: 'Launch of the e-commerce platform for agricultural products.',
-    icon: FaTractor,
-  },
-  {
-    year: 'February 2025',
-    title: 'Warehouse & BPR',
-    description: 'Warehouse designs and Business Process Reengineering implementation.',
-    icon: FaWarehouse,
-  },
-  {
-    year: 'March 2025',
-    title: 'Precision Farming',
-    description: 'Implementation of precision farming and diagnostics modules.',
-    icon: FaLeaf,
-  },
-  {
-    year: 'April 2025',
-    title: 'Official Launch',
-    description: 'Official platform launch with comprehensive features.',
-    icon: FaRocket,
-  },
-  {
-    year: 'Current',
-    title: 'Expansion Phase',
-    description: 'Onboarding banks, vendors, farmers and expanding our team of experts for national integrations with all stakeholders.',
-    icon: FaHandshake,
-  }
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: 'easeOut',
-    },
-  },
-};
-
 const Timeline = () => {
+  const { t, i18n } = useTranslation();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -90,6 +13,125 @@ const Timeline = () => {
 
   const headerY = useTransform(scrollYProgress, [0, 0.2], [100, 0]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+
+  // Function to format dates based on language
+  const formatDate = (dateString) => {
+    // If it's "Current", return the translated version
+    if (dateString === 'Current') {
+      return t('timeline.events.8.year');
+    }
+
+    // Parse the date string
+    const [month, year] = dateString.split(' ');
+    
+    // For English, return as is
+    if (i18n.language === 'en') {
+      return dateString;
+    }
+    
+    // For Urdu, use the translated month and year
+    if (i18n.language === 'ur') {
+      // Map English months to Urdu translations
+      const monthMap = {
+        'January': 'جنوری',
+        'February': 'فروری',
+        'March': 'مارچ',
+        'April': 'اپریل',
+        'May': 'مئی',
+        'June': 'جون',
+        'July': 'جولائی',
+        'August': 'اگست',
+        'September': 'ستمبر',
+        'October': 'اکتوبر',
+        'November': 'نومبر',
+        'December': 'دسمبر'
+      };
+      
+      return `${monthMap[month] || month} ${year}`;
+    }
+    
+    // Default fallback
+    return dateString;
+  };
+
+  const timelineData = [
+    {
+      year: formatDate('September 2024'),
+      title: t('timeline.events.0.title'),
+      description: t('timeline.events.0.description'),
+      icon: FaLightbulb,
+    },
+    {
+      year: formatDate('October 2024'),
+      title: t('timeline.events.1.title'),
+      description: t('timeline.events.1.description'),
+      icon: FaFlask,
+    },
+    {
+      year: formatDate('November 2024'),
+      title: t('timeline.events.2.title'),
+      description: t('timeline.events.2.description'),
+      icon: FaChartLine,
+    },
+    {
+      year: formatDate('December 2024'),
+      title: t('timeline.events.3.title'),
+      description: t('timeline.events.3.description'),
+      icon: FaSeedling,
+    },
+    {
+      year: formatDate('January 2025'),
+      title: t('timeline.events.4.title'),
+      description: t('timeline.events.4.description'),
+      icon: FaTractor,
+    },
+    {
+      year: formatDate('February 2025'),
+      title: t('timeline.events.5.title'),
+      description: t('timeline.events.5.description'),
+      icon: FaWarehouse,
+    },
+    {
+      year: formatDate('March 2025'),
+      title: t('timeline.events.6.title'),
+      description: t('timeline.events.6.description'),
+      icon: FaLeaf,
+    },
+    {
+      year: formatDate('April 2025'),
+      title: t('timeline.events.7.title'),
+      description: t('timeline.events.7.description'),
+      icon: FaRocket,
+    },
+    {
+      year: formatDate('Current'),
+      title: t('timeline.events.8.title'),
+      description: t('timeline.events.8.description'),
+      icon: FaHandshake,
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden" id="timeline">
@@ -109,10 +151,10 @@ const Timeline = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            Our Journey
+            {t('timeline.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            The roadmap to revolutionizing agriculture in Pakistan
+            {t('timeline.description')}
           </p>
         </motion.div>
 

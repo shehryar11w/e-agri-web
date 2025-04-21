@@ -1,32 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLeaf, FaChartLine, FaUsers, FaHandshake } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 import Homescreen from '../../assets/mockups/home.png';
 
 const About = () => {
-
+  const { t } = useTranslation();
   
   const features = [
     {
       icon: <FaLeaf className="w-6 h-6" />,
-      title: 'Our Mission',
-      description: 'To empower farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.'
+      title: t('about.features.mission.title', 'Our Mission'),
+      description: t('about.features.mission.description', 'To empower farmers with cutting-edge technology and data-driven insights for sustainable and profitable agriculture.')
     },
     {
       icon: <FaChartLine className="w-6 h-6" />,
-      title: 'Our Vision',
-      description: "To transform Pakistan's agricultural sector into a modern, efficient, and sustainable industry that feeds the globe."
+      title: t('about.features.vision.title', 'Our Vision'),
+      description: t('about.features.vision.description', "To transform Pakistan's agricultural sector into a modern, efficient, and sustainable industry that feeds the globe.")
     },
     {
       icon: <FaUsers className="w-6 h-6" />,
-      title: 'Our Team',
-      description: 'A diverse team of agricultural experts, technologists, and farmers working together to revolutionize farming in Pakistan.'
+      title: t('about.features.team.title', 'Our Team'),
+      description: t('about.features.team.description', 'A diverse team of agricultural experts, technologists, and farmers working together to revolutionize farming in Pakistan.')
     },
     {
       icon: <FaHandshake className="w-6 h-6" />,
-      title: 'Our Impact',
-      description: 'Helping thousands of farmers increase their yields, reduce costs, and make data-driven decisions for better farming outcomes.'
+      title: t('about.features.impact.title', 'Our Impact'),
+      description: t('about.features.impact.description', 'Helping thousands of farmers increase their yields, reduce costs, and make data-driven decisions for better farming outcomes.')
     }
   ];
 
@@ -44,10 +45,10 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Transforming Agriculture in Pakistan
+            {t('about.title', 'Transforming Agriculture in Pakistan')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            E-Agri is revolutionizing farming in Pakistan by combining traditional agricultural knowledge with modern technology. Our platform helps farmers make informed decisions, optimize resources, and increase their yields while promoting sustainable farming practices.
+            {t('about.description', 'E-Agri is revolutionizing farming in Pakistan by combining traditional agricultural knowledge with modern technology. Our platform helps farmers make informed decisions, optimize resources, and increase their yields while promoting sustainable farming practices.')}
           </p>
         </motion.div>
 
@@ -93,7 +94,7 @@ const About = () => {
             <div className="relative overflow-hidden">
               <img 
                 src={Homescreen} 
-                alt="Pakistani farmers using E-Agri app" 
+                alt={t('about.imageAlt', 'Pakistani farmers using E-Agri app')} 
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />

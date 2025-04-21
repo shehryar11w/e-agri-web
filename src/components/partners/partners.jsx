@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import mite from '../../assets/partners/mite.png';
 import euronet from '../../assets/partners/euronet.png';
@@ -8,6 +9,7 @@ import cma from '../../assets/partners/cma.svg';
 import syngenta from '../../assets/partners/syngenta.svg';
 
 const Partners = () => {
+  const { t } = useTranslation();
 
   const partners = [
     { name: 'MiTe', logo: mite },
@@ -56,9 +58,9 @@ const Partners = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Partners</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('partners.title')}</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Collaborating with industry leaders to revolutionize agriculture
+            {t('partners.description')}
           </p>
         </motion.div>
 

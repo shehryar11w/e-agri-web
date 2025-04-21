@@ -70,8 +70,8 @@ const Download = () => {
             >
               <FaGooglePlay className="w-8 h-8 text-brand" />
               <div className="text-left">
-                <div className="text-xs text-gray-500 dark:text-gray-400">GET IT ON</div>
-                <div className="text-lg font-semibold text-gray-900 dark:text-white">Google Play</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">{t('download.buttons.getItOn')}</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">{t('download.buttons.googlePlay')}</div>
               </div>
             </motion.a>
 
@@ -86,8 +86,8 @@ const Download = () => {
             >
               <FaApple className="w-8 h-8 text-brand" />
               <div className="text-left">
-                <div className="text-xs text-gray-500 dark:text-gray-400">DOWNLOAD ON THE</div>
-                <div className="text-lg font-semibold text-gray-900 dark:text-white">App Store</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">{t('download.buttons.downloadOnThe')}</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">{t('download.buttons.appStore')}</div>
               </div>
             </motion.a>
           </motion.div>
