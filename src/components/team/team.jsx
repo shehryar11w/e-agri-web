@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ceoImage from '../../assets/AdnanSye.jpg';
+import ceoImage from '../../assets/AdnanSye.png';
 import cooImage from '../../assets/coo.png';
-import kamranAhsan from '../../assets/KA.jpg';
+import kamranAhsan from '../../assets/KA.png';
 import abdulRehman from '../../assets/AbdulRehman.png';
 
 const teamData = [
