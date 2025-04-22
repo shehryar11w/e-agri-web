@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCloud, FaChevronLeft, FaChevronRight, FaShoppingCart, FaTractor, FaWarehouse, FaChartLine } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaWarehouse, FaChartLine } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
@@ -22,12 +22,12 @@ import ESettlements from '../../assets/modulesLogos/deal.png';
 import EAnimalFeed from '../../assets/modulesLogos/feed.png';
 
 
-import PlantDoctorMockup from '../../assets/mockups/plantDoctorScreen.png';
-import ELoanMockup from '../../assets/mockups/ELoan.png';
+import PlantDoctorMockup from '../../assets/mockups/plantDr.png';
+import ELoanMockup from '../../assets/mockups/Loan.png';
 import EAdvisorMockup from '../../assets/mockups/EAdvisor.png';
-import EMundiMockup from '../../assets/mockups/EMundi.png';
-import EWarehouseMockup from '../../assets/mockups/EWarehouse.png';
-
+import EMundiMockup from '../../assets/mockups/auction.png';
+import EWarehouseMockup from '../../assets/mockups/warehouse.png';
+import EMarketMockup from '../../assets/mockups/market.png';
 
 
 const Features = () => {
@@ -51,7 +51,7 @@ const Features = () => {
       title: t('features.eMarket.title'),
       description: t('features.eMarket.description'),
       details: t('features.eMarket.details'),
-      mockup: ELoanMockup,
+      mockup: EMarketMockup,
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {

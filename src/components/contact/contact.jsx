@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 const Contact = () => {
   const { t } = useTranslation();
+  const recaptchaRef = useRef();
   const [formData, setFormData] = useState({
     category: '',
     name: '',
@@ -15,6 +16,7 @@ const Contact = () => {
   const [captchaValue, setCaptchaValue] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const categories = [
     { value: 'General', label: t('contact.categories.general') },
@@ -34,28 +36,39 @@ const Contact = () => {
 
   const handleCaptchaChange = (value) => {
     setCaptchaValue(value);
+    setErrorMessage('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
     
     if (!captchaValue) {
+      setErrorMessage(t('contact.form.captchaRequired'));
       setSubmitStatus('error');
       return;
     }
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('https://eagri-website-backend.vercel.app/ContactUsForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          category: formData.category,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(data.message || 'Failed to submit form');
       }
 
       setSubmitStatus('success');
@@ -67,9 +80,12 @@ const Contact = () => {
         message: ''
       });
       setCaptchaValue(null);
+      recaptchaRef.current?.reset();
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+      setErrorMessage(error.message || t('contact.form.error'));
+      recaptchaRef.current?.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -191,7 +207,8 @@ const Contact = () => {
             {/* reCAPTCHA */}
             <div className="flex justify-center">
               <ReCAPTCHA
-                sitekey="6Lf8rwcrAAAAAI6PRiH33ryFU1yhvYNszPMbMii4"
+              ref={recaptchaRef}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || "6Lf8rwcrAAAAAI6PRiH33ryFU1yhvYNszPMbMii4"}
                 onChange={handleCaptchaChange}
                 theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}
               />
@@ -220,7 +237,7 @@ const Contact = () => {
             )}
             {submitStatus === 'error' && (
               <div className="text-red-600 dark:text-red-400 text-center">
-                {t('contact.form.error')}
+                {errorMessage || t('contact.form.error')}
               </div>
             )}
           </motion.form>

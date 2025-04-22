@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
@@ -12,15 +12,26 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
   const { t } = useTranslation();
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target) && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -74,7 +85,7 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm dark:shadow-gray-900/30 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-900/30 transition-all duration-300 ${
         isScrolled ? 'bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-900/50' : ''
       }`}
       initial="hidden"
@@ -136,27 +147,35 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.nav 
-            className="fixed top-0 right-0 bottom-0 w-full md:w-[400px] bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-900/50 p-8 md:p-12 z-50"
+            ref={menuRef}
+            className="fixed top-0 right-0 w-full md:w-[400px] bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-900/50 p-8 md:p-12 z-50 rounded-b-2xl"
             variants={mobileMenuVariants}
             initial="closed"
             animate="open"
             exit="closed"
           >
-            <div className="flex justify-end mb-8">
+            <div className="flex justify-between mb-12">
               <motion.button 
                 onClick={toggleTheme}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {isDarkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
+                {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
+              </motion.button>
+              <motion.button 
+                className="text-gray-900 dark:text-white text-2xl p-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                onClick={() => setIsOpen(false)}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaTimes />
               </motion.button>
             </div>
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-4 text-lg text-gray-600 dark:text-gray-300 border-b border-gray-100 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="block py-6 text-lg text-gray-600 dark:text-gray-300 border-b border-gray-100 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 variants={navItemVariants}
                 whileHover={{ x: 10, color: "#059669" }}
                 onClick={() => setIsOpen(false)}
@@ -164,7 +183,7 @@ const Header = () => {
                 {item.name}
               </motion.a>
             ))}
-            <div className="mt-8">
+            <div className="mt-12">
               <LanguageSwitcher />
             </div>
           </motion.nav>
