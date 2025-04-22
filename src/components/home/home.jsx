@@ -24,6 +24,7 @@ const Hero = () => {
     <section 
       ref={sectionRef}
       className="min-h-screen flex items-center py-12 sm:py-16 md:py-24 relative overflow-hidden"
+      id="home"
     >
       {/* Background image with overlay */}
       <div className="absolute inset-0">

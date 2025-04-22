@@ -80,7 +80,7 @@ const Header = () => {
     { name: t('nav.home'), href: '#home' },
     { name: t('nav.features'), href: '#features' },
     { name: t('nav.about'), href: '#about' },
-    { name: t('nav.downloadApp'), href: '#download' }
+    // { name: t('nav.downloadApp'), href: '#download' }
   ];
 
   return (
