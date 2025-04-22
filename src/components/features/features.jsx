@@ -293,7 +293,7 @@ const Features = () => {
         </motion.div>
 
         {/* Feature Carousel */}
-        <div className="relative h-auto max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl mb-16">
+        <div className="relative h-auto max-h-[80vh] overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-xl mb-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -304,15 +304,17 @@ const Features = () => {
               className="flex flex-col md:flex-row min-h-[400px]"
             >
               {/* Mockup Image */}
-              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-xl">
-                <motion.img
-                  src={MockupFeatures[currentSlide].mockup}
-                  alt={MockupFeatures[currentSlide].title}
-                  className="w-full h-auto max-h-[250px] xs:max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] object-contain drop-shadow-lg"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                />
+              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-xl overflow-hidden">
+                <div className="w-full h-[250px] xs:h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] flex items-center justify-center">
+                  <motion.img
+                    src={MockupFeatures[currentSlide].mockup}
+                    alt={MockupFeatures[currentSlide].title}
+                    className="w-full h-full object-contain drop-shadow-lg"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  />
+                </div>
               </div>
 
               {/* Feature Description */}
