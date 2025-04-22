@@ -6,7 +6,7 @@ import ceoImage from '../../assets/ceo.png';
 import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/KA.jpg';
 import abdulRehman from '../../assets/AbdulRehman.jpg';
-
+import nasiraHoori from '../../assets/nHoori.jpg';
 const teamData = [
   {
     name: 'team.adnanSyed.name',
@@ -55,8 +55,41 @@ const teamData = [
   {
     name: 'team.nasiraHoori.name',
     role: 'team.nasiraHoori.role',
-    image: kamranAhsan,
+    image: nasiraHoori,
     bio: 'team.nasiraHoori.bio',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    name: '',
+    role: '',
+    image: '',
+    bio: '',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    name: '',
+    role: '',
+    image: '',
+    bio: '',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    name: '',
+    role: '',
+    image: '',
+    bio: '',
     social: {
       linkedin: '#',
       twitter: '#',
