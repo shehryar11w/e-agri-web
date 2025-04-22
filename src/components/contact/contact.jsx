@@ -51,14 +51,17 @@ const Contact = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch('https://e-agri.com.pk/backend/api/contact', {
+      const response = await fetch('https://eagri-website-backend.vercel.app/ContactUsForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
-          recaptchaToken: captchaValue
+          category: formData.category,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
         })
       });
 
