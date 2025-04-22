@@ -14,9 +14,7 @@ const teamData = [
     image: ceoImage,
     bio: 'team.adnanSyed.bio',
     social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
+      linkedin: '#' 
     },
   },
   {
@@ -25,9 +23,7 @@ const teamData = [
     image: cooImage,
     bio: 'team.shehzadMakhani.bio',
     social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
+      linkedin: 'https://pk.linkedin.com/in/shm13041977'
     },
   },
   {
@@ -37,8 +33,6 @@ const teamData = [
     bio: 'team.kamranAhsan.bio',
     social: {
       linkedin: '#',
-      twitter: '#',
-      github: '#',
     },
   },
   {
@@ -47,9 +41,7 @@ const teamData = [
     image: abdulRehman,
     bio: 'team.abdulRehman.bio',
     social: {
-      linkedin: '#',
-      twitter: '#', 
-      github: '#',
+      linkedin: 'https://www.linkedin.com/in/armahmood'
     },
   },
   {
@@ -58,9 +50,7 @@ const teamData = [
     image: kamranAhsan,
     bio: 'team.nasiraHoori.bio',
     social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
+      linkedin: 'https://www.linkedin.com/in/nasira-hoori-65355a9',
     },
   },
 ];
@@ -140,22 +130,7 @@ const Team = () => {
                     >
                       <FaLinkedin />
                     </a>
-                    <a 
-                      href={member.social.twitter} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-900 rounded-full text-emerald-600 dark:text-emerald-400 text-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-600 hover:text-white"
-                    >
-                      <FaTwitter />
-                    </a>
-                    <a 
-                      href={member.social.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-900 rounded-full text-emerald-600 dark:text-emerald-400 text-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-600 hover:text-white"
-                    >
-                      <FaGithub />
-                    </a>
+                  
                   </div>
                 </div>
               </div>
