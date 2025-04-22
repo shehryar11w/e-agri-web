@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-import mite from '../../assets/partners/mite.png';
 import euronet from '../../assets/partners/euronet.png';
-
 import cma from '../../assets/partners/cma.svg';
 import syngenta from '../../assets/partners/syngenta.svg';
 
@@ -12,7 +10,6 @@ const Partners = () => {
   const { t } = useTranslation();
 
   const partners = [
-    { name: 'MiTe', logo: mite },
     { name: 'Euronet', logo: euronet },
     { name: 'CMA', logo: cma },
     { name: 'Syngenta', logo: syngenta },
@@ -78,16 +75,14 @@ const Partners = () => {
               {partners.map((partner, index) => (
                 <motion.div
                   key={`${partner.name}-${index}`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 dark:bg-gray-800/40 p-6 rounded-xl shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50 backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50 hover:border-brand/50 dark:hover:border-brand/50"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 p-6 rounded-xl shadow-lg  backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                 >
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                    className="w-[140px] h-[80px] object-contain opacity-100"
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                   />
@@ -100,20 +95,14 @@ const Partners = () => {
               {partners.map((partner, index) => (
                 <motion.div
                   key={`${partner.name}-${index}-duplicate`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 dark:bg-gray-800/40 p-6 rounded-xl shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50 backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50 hover:border-brand/50 dark:hover:border-brand/50"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 rounded-xl shadow-lg  backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                 >
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className={`w-[140px] h-[80px] object-contain transition-all duration-300 ${
-                      partner.name === 'Syngenta' 
-                        ? 'grayscale opacity-80 dark:opacity-90 hover:grayscale-0 hover:opacity-100' 
-                        : 'grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
-                    }`}
+                    className="w-[140px] h-[80px] object-contain opacity-100"
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                   />
@@ -126,20 +115,14 @@ const Partners = () => {
               {partners.map((partner, index) => (
                 <motion.div
                   key={`${partner.name}-${index}-duplicate-2`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 dark:bg-gray-800/40 p-6 rounded-xl shadow-lg dark:shadow-gray-900/30 transition-all duration-300 cursor-pointer hover:shadow-xl dark:hover:shadow-gray-900/50 backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50 hover:border-brand/50 dark:hover:border-brand/50"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 p-6 rounded-xl shadow-lg backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
                   onFocus={handleFocus}
                   onBlur={handleBlur}
                 >
                   <img 
                     src={partner.logo} 
                     alt={`${partner.name} logo`}
-                    className={`w-[140px] h-[80px] object-contain transition-all duration-300 ${
-                      partner.name === 'Syngenta' 
-                        ? 'grayscale opacity-80 dark:opacity-90 hover:grayscale-0 hover:opacity-100' 
-                        : 'grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
-                    }`}
+                    className="w-[140px] h-[80px] object-contain opacity-100"
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                   />

@@ -64,7 +64,16 @@ const Footer = () => {
         >
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <img src={logo} alt={t('header.logoAlt')} className="h-8" />
+            <motion.a 
+              href="/" 
+              className="flex items-center gap-3 text-gray-900 dark:text-white hover:scale-105 transition-transform"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img src={logo} alt={t('header.logoAlt')} className="w-10 h-10 drop-shadow-md" />
+              <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-800 dark:from-emerald-400 dark:to-emerald-600 bg-clip-text text-transparent">
+                E-Agri
+              </span>
+            </motion.a>
             <p className="text-gray-600 dark:text-gray-400">
               {t('footer.description')}
             </p>
@@ -111,12 +120,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{t('footer.contact')}</h3>
             <ul className="space-y-2">
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
-                <FaPhone className="text-brand" />
-                <span>{t('footer.phone')}</span>
-              </li>
-              <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
                 <FaEnvelope className="text-brand" />
-                <span>{t('footer.email')}</span>
+                <a 
+                  href="mailto:info@e-agri.com.pk"
+                  className="hover:text-brand dark:hover:text-brand transition-colors"
+                >
+                  info@e-agri.com.pk
+                </a>
               </li>
               <li className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
                 <FaMapMarkerAlt className="text-brand" />
@@ -136,13 +146,21 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <motion.p variants={itemVariants} className="text-gray-600 dark:text-gray-400">
-              {t('footer.copyright', { year: new Date().getFullYear() })}
+              © {new Date().getFullYear()} E-Agri. All rights reserved. Powered by{' '}
+              <a 
+                href="https://elixirflare.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand hover:text-brand-dark transition-colors"
+              >
+                Elixir Flare
+              </a>
             </motion.p>
             <motion.div variants={itemVariants} className="flex space-x-4">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, index) => (
+              {[FaLinkedinIn].map((Icon, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href="https://www.linkedin.com/showcase/e-agri-smart-farming-solutions"
                   className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand hover:text-white dark:hover:bg-brand dark:hover:text-white transition-colors"
                   variants={socialLinkVariants}
                   whileHover="hover"

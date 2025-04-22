@@ -10,7 +10,7 @@ const Contact = () => {
     category: '',
     name: '',
     email: '',
-    subject: '',
+    phone: '',
     message: ''
   });
   const [captchaValue, setCaptchaValue] = useState(null);
@@ -20,14 +20,31 @@ const Contact = () => {
 
   const categories = [
     { value: 'General', label: t('contact.categories.general') },
-    { value: 'Feedback', label: t('contact.categories.feedback') },
-    { value: 'Suggestion', label: t('contact.categories.suggestion') },
+    { value: 'Feedback/Suggestion', label: 'Feedback / Suggestion' },
     { value: 'Feature Request', label: t('contact.categories.feature') },
     { value: 'Collaboration', label: t('contact.categories.collaboration') }
   ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
+    // Input validations
+    if (name === 'name') {
+      // Only allow letters and spaces
+      if (!/^[A-Za-z\s]*$/.test(value)) return;
+    }
+    
+    if (name === 'phone') {
+      // Only allow numbers and limit to 15 digits
+      if (!/^\d*$/.test(value)) return;
+      if (value.length > 15) return;
+    }
+
+    if (name === 'message') {
+      // Limit to 2000 characters
+      if (value.length > 2000) return;
+    }
+
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -60,7 +77,7 @@ const Contact = () => {
           category: formData.category,
           name: formData.name,
           email: formData.email,
-          subject: formData.subject,
+          subject: formData.phone,
           message: formData.message
         })
       });
@@ -76,7 +93,7 @@ const Contact = () => {
         category: '',
         name: '',
         email: '',
-        subject: '',
+        phone: '',
         message: ''
       });
       setCaptchaValue(null);
@@ -89,6 +106,14 @@ const Contact = () => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const getCharacterCount = () => {
+    return formData.message.length;
+  };
+
+  const getWordCount = () => {
+    return formData.message.trim().split(/\s+/).filter(Boolean).length;
   };
 
   return (
@@ -121,7 +146,7 @@ const Contact = () => {
             {/* Category Select */}
             <div>
               <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.category')}
+                {t('contact.form.category')} <span className="text-red-500">*</span>
               </label>
               <select
                 id="category"
@@ -143,7 +168,7 @@ const Contact = () => {
             {/* Name Input */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.name')}
+                {t('contact.form.name')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -152,6 +177,8 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                pattern="[A-Za-z\s]+"
+                title="Only letters and spaces are allowed"
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent dark:bg-gray-700 dark:text-white"
               />
             </div>
@@ -159,7 +186,7 @@ const Contact = () => {
             {/* Email Input */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.email')}
+                {t('contact.form.email')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -172,18 +199,21 @@ const Contact = () => {
               />
             </div>
 
-            {/* Subject Input */}
+            {/* Phone Input */}
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.subject')}
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Contact # <span className="text-red-500">*</span>
               </label>
               <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
                 onChange={handleChange}
                 required
+                pattern="[0-9]{1,15}"
+                maxLength={15}
+                title="Only numbers are allowed (max 15 digits)"
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent dark:bg-gray-700 dark:text-white"
               />
             </div>
@@ -191,7 +221,7 @@ const Contact = () => {
             {/* Message Textarea */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.message')}
+                {t('contact.form.message')} <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
@@ -200,14 +230,19 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="4"
+                maxLength={2000}
                 className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent dark:bg-gray-700 dark:text-white"
               />
+              <div className="mt-1 text-sm text-gray-500 dark:text-gray-400 flex justify-between">
+                <span>{getCharacterCount()}/2000 characters</span>
+                <span>{getWordCount()}/400 words</span>
+              </div>
             </div>
 
             {/* reCAPTCHA */}
             <div className="flex justify-center">
               <ReCAPTCHA
-              ref={recaptchaRef}
+                ref={recaptchaRef}
                 sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || "6Lf8rwcrAAAAAI6PRiH33ryFU1yhvYNszPMbMii4"}
                 onChange={handleCaptchaChange}
                 theme={document.documentElement.classList.contains('dark') ? 'dark' : 'light'}

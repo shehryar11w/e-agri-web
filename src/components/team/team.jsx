@@ -7,6 +7,7 @@ import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/KA.png';
 import abdulRehman from '../../assets/AbdulRehman.png';
 import nasiraHoori from '../../assets/nHoori.jpg';
+
 const teamData = [
   {
     name: 'team.adnanSyed.name',
@@ -27,25 +28,39 @@ const teamData = [
     },
   },
   {
-    name: 'Nouman',
-    role: '',
+    name: 'Nouman Islam',
+    role: 'VP - IT & Trading Platform',
     image: '',
     bio: '',
     social: {
       linkedin: '#',
-      twitter: '#',
-      github: '#',
     },
   },
   {
-    name: 'Zulquarnain ',
-    role: '',
+    name: 'Zulquarnain',
+    role: 'Senior Lead II',
     image: '',
     bio: '',
     social: {
       linkedin: '#',
-      twitter: '#',
-      github: '#',
+    },
+  },
+  {
+    name: 'Musharraf Hussain',
+    role: 'Senior Lead I',
+    image: '',
+    bio: '',
+    social: {
+      linkedin: '#',
+    },
+  },
+  {
+    name: 'team.nasiraHoori.name',
+    role: 'team.nasiraHoori.role',
+    image: nasiraHoori,
+    bio: 'team.nasiraHoori.bio',
+    social: {
+      linkedin: '#',
     },
   },
   {
@@ -64,30 +79,6 @@ const teamData = [
     bio: 'team.abdulRehman.bio',
     social: {
       linkedin: '#',
-      twitter: '#', 
-      github: '#',
-    },
-  },
-  {
-    name: 'team.nasiraHoori.name',
-    role: 'team.nasiraHoori.role',
-    image: nasiraHoori,
-    bio: 'team.nasiraHoori.bio',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Musharraf',
-    role: '',
-    image: '',
-    bio: '',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
     },
   },
 ];
@@ -131,7 +122,7 @@ const Team = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            {t('team.title')}
+            The Team Behind
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
             {t('team.description')}
@@ -167,16 +158,15 @@ const Team = () => {
                     >
                       <FaLinkedin />
                     </a>
-                  
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{t(member.name)}</h3>
-                <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-semibold mb-4">
+              <div className="p-6 text-left">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{t(member.name)}</h3>
+                <p className="text-emerald-600 dark:text-emerald-400 text-sm font-semibold">
                   {t(member.role)}
-                </span>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t(member.bio)}</p>
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-4">{t(member.bio)}</p>
               </div>
             </motion.div>
           ))}

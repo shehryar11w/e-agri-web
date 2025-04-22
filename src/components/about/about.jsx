@@ -85,17 +85,17 @@ const About = () => {
           </motion.div>
 
           <motion.div
-            className="relative"
+            className="relative flex justify-center items-center"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden w-[60%]">
               <img 
                 src={Homescreen} 
                 alt={t('about.imageAlt', 'Pakistani farmers using E-Agri app')} 
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-contain"
                 loading="lazy"
               />
             </div>

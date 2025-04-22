@@ -195,7 +195,7 @@
   },
   "timeline": {
     "title": "Our Journey",
-    "description": "The roadmap to revolutionizing agriculture in Pakistan",
+    "description": "Roadmap to revolutionizing agriculture in Pakistan",
     "events": [
       {
         "year": "September 2024",
@@ -215,7 +215,7 @@
       {
         "year": "December 2024",
         "title": "POC",
-        "description": "Proof of Concept development and initial testing."
+        "description": "Proof of concept development and initial testing."
       },
       {
         "year": "January 2025",
@@ -352,7 +352,7 @@
   },
   "footer": {
     "title": "E-Agri",
-    "description": "Revolutionizing agriculture in Pakistan",
+    "description": " Smart Farming Solutions",
     "quickLinks": "Quick Links",
     "support": "Support",
     "contact": "Contact",
@@ -361,6 +361,6 @@
     "phone": "+92 321 8910255",
     "email": "info@e-agri.com.pk",
     "address": "Karachi, Pakistan",
-    "copyright": "© 2024 E-Agri. All rights reserved."
+    "copyright": "© 2024 E-Agrii by Elixir Flare. All rights reserved."
   }
 } 

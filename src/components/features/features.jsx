@@ -5,7 +5,6 @@ import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
 
-import ELoan from '../../assets/mockups/E-Loan.png';
 
 import EMundi from '../../assets/modulesLogos/market.png';
 import EAdvisor from '../../assets/modulesLogos/AI.png';
@@ -13,19 +12,17 @@ import EMarket from '../../assets/modulesLogos/market.png';
 import EWarehouse from '../../assets/modulesLogos/warehouse.png';
 import EPlantDoctor from '../../assets/modulesLogos/PlantDr.png';
 import EAuction from '../../assets/modulesLogos/money.png';
-import EOrders from '../../assets/modulesLogos/orders.png';
 import ERental from '../../assets/modulesLogos/tractor.png';
 import ETransport from '../../assets/modulesLogos/truck.png';
-import EFoodSupply from '../../assets/modulesLogos/A.png';
 import EMunshi from '../../assets/modulesLogos/register.png';
 import ESettlements from '../../assets/modulesLogos/deal.png';
-import EAnimalFeed from '../../assets/modulesLogos/feed.png';
-
+import NPLRestructure from '../../assets/modulesLogos/NPL.jpg';
+import LRMS from '../../assets/modulesLogos/LRMS.jpg';
 
 import PlantDoctorMockup from '../../assets/mockups/plantDr.png';
 import ELoanMockup from '../../assets/mockups/Loan.png';
 import EAdvisorMockup from '../../assets/mockups/EAdvisor.png';
-import EMundiMockup from '../../assets/mockups/auction.png';
+import EMundiMockup from '../../assets/mockups/liveAuction.png';
 import EWarehouseMockup from '../../assets/mockups/warehouse.png';
 import EMarketMockup from '../../assets/mockups/market.png';
 
@@ -88,14 +85,6 @@ const Features = () => {
     },
   ];
 
-  // Auto-swipe functionality
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % MockupFeatures.length);
-    }, 9000);
-    return () => clearInterval(interval);
-  }, [MockupFeatures.length]);
-
   const features = [
     {
       icon: EMundi,
@@ -137,20 +126,28 @@ const Features = () => {
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
-      icon: <FaChartLine />,
+      icon: NPLRestructure,
       title: t('features.nplRestructure.title'),
       description: t('features.nplRestructure.description'),
       details: t('features.nplRestructure.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
     {
-      icon: <FaWarehouse />,
+      icon: LRMS,
       title: t('features.lrms.title'),
       description: t('features.lrms.description'),
       details: t('features.lrms.details'),
       color: "from-white to-white dark:from-white dark:to-white"
     },
   ];
+
+  // Auto-swipe functionality
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % MockupFeatures.length);
+    }, 9000);
+    return () => clearInterval(interval);
+  }, [MockupFeatures.length]);
 
   // Handle escape key to close modal
   useEffect(() => {
@@ -394,10 +391,7 @@ const Features = () => {
               whileInView="visible"
               whileHover="hover"
               whileTap="tap"
-              onClick={() => {
-                setCurrentSlide(index);
-                openModal(feature);
-              }}
+              onClick={() => openModal(feature)}
             >
               {/* Pulse animation background */}
               <motion.div 

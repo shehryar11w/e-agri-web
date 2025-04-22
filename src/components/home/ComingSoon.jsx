@@ -127,11 +127,11 @@ const ComingSoon = () => {
     }
   ];
 
-  // Auto-swipe functionality
+  // Auto-swipe functionality with 5 second delay
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % upcomingFeatures.length);
-    }, 3000);
+    }, 5000); // Changed to 5000ms (5 seconds)
     return () => clearInterval(interval);
   }, [upcomingFeatures.length]);
 
@@ -154,10 +154,10 @@ const ComingSoon = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {t('comingSoon.title')}
+            On the Horizon
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('comingSoon.description')}
+            Exciting new and innovative features just around the corner to revolutionize your farming experience
           </p>
         </motion.div>
 
@@ -181,18 +181,15 @@ const ComingSoon = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {upcomingFeatures.slice(currentSlide, currentSlide + 3).map((feature, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
                     className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
                     <div className="text-brand mb-4 flex justify-center">
