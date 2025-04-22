@@ -4,8 +4,8 @@ import { FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ceoImage from '../../assets/AdnanSye.png';
 import cooImage from '../../assets/coo.png';
-import kamranAhsan from '../../assets/KA.jpg';
-import abdulRehman from '../../assets/AbdulRehman.jpg';
+import kamranAhsan from '../../assets/KA.png';
+import abdulRehman from '../../assets/AbdulRehman.png';
 import nasiraHoori from '../../assets/nHoori.jpg';
 const teamData = [
   {
@@ -24,6 +24,28 @@ const teamData = [
     bio: 'team.shehzadMakhani.bio',
     social: {
       linkedin: 'https://pk.linkedin.com/in/shm13041977'
+    },
+  },
+  {
+    name: 'Nouman',
+    role: '',
+    image: '',
+    bio: '',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
+    },
+  },
+  {
+    name: 'Zulquarnain ',
+    role: '',
+    image: '',
+    bio: '',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#',
     },
   },
   {
@@ -58,29 +80,7 @@ const teamData = [
     },
   },
   {
-    name: '',
-    role: '',
-    image: '',
-    bio: '',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
-    },
-  },
-  {
-    name: '',
-    role: '',
-    image: '',
-    bio: '',
-    social: {
-      linkedin: '#',
-      twitter: '#',
-      github: '#',
-    },
-  },
-  {
-    name: '',
+    name: 'Musharraf',
     role: '',
     image: '',
     bio: '',

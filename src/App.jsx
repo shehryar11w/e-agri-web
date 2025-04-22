@@ -24,7 +24,7 @@ const App = () => {
         </Navbar>
         <Header />
         <main className="flex-1 pt-[70px]">
-          {/* <ChatClient /> */}
+          <ChatClient />
           <Home />
           <Features />  
           <About />
