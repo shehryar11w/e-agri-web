@@ -7,7 +7,7 @@ import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/KA.png';
 import abdulRehman from '../../assets/AbdulRehman.png';
 import nasiraHoori from '../../assets/nHoori.jpg';
-
+import musharrafHussain from '../../assets/musharraf.png';
 const teamData = [
   {
     name: 'team.adnanSyed.name',
@@ -48,7 +48,7 @@ const teamData = [
   {
     name: 'Musharraf Hussain',
     role: 'Senior Lead I',
-    image: '',
+    image: musharrafHussain,
     bio: '',
     social: {
       linkedin: '#',

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronLeft, FaChevronRight, FaWarehouse, FaChartLine } from 'react-icons/fa';
-import { useTheme } from '../../context/ThemeContext';
+import { FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+
 import { useTranslation } from 'react-i18next';
 
 
@@ -31,7 +31,7 @@ const Features = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);  
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { isDarkMode } = useTheme();
+  
   const { t } = useTranslation();
 
   const MockupFeatures = [

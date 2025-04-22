@@ -30,7 +30,7 @@ const Timeline = () => {
     }
     
     // For Urdu, use the translated month and year
-    if (i18n.language === 'ur') {
+    if (i18n.language === 'ur' || i18n.language === 'sd' || i18n.language === 'ps') {
       // Map English months to Urdu translations
       const monthMap = {
         'January': 'جنوری',

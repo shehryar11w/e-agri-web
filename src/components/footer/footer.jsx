@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.png';
 
@@ -29,16 +29,6 @@ const Footer = () => {
     }
   };
 
-  const socialLinkVariants = {
-    hover: {
-      scale: 1.1,
-      rotate: 360,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   const quickLinks = [
     { name: t('nav.home'), href: '#home' },
