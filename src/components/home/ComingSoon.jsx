@@ -5,7 +5,7 @@ import {
   FaChevronLeft, FaChevronRight, FaGraduationCap, FaNewspaper, FaMicroscope, 
   FaUsers, FaRobot, FaShoppingCart, FaPhoneAlt, FaThermometerHalf, FaPlane, 
   FaFingerprint, FaNetworkWired, FaFlask, FaBook, FaVideo, FaChartLine, 
-  FaHandshake, FaCloud, FaSatellite, FaLeaf, FaSeedling, FaTractor, 
+  FaHandshake, FaCloud, FaSatellite, FaLeaf, FaSeedling, 
   FaSearch, FaDatabase, FaLightbulb, FaGlobe, FaUserFriends, FaComments,
   FaBrain, FaChartBar, FaCog, FaUtensils, FaTruck, FaWarehouse, FaClipboardCheck
 } from 'react-icons/fa';

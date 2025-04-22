@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ceoImage from '../../assets/ceo.png';
+import ceoImage from '../../assets/AdnanSye.jpg';
 import cooImage from '../../assets/coo.png';
 import kamranAhsan from '../../assets/KA.jpg';
-import abdulRehman from '../../assets/AbdulRehman.jpg';
+import abdulRehman from '../../assets/AbdulRehman.png';
 
 const teamData = [
   {
@@ -44,15 +44,15 @@ const teamData = [
       linkedin: 'https://www.linkedin.com/in/armahmood'
     },
   },
-  {
-    name: 'team.nasiraHoori.name',
-    role: 'team.nasiraHoori.role',
-    image: kamranAhsan,
-    bio: 'team.nasiraHoori.bio',
-    social: {
-      linkedin: 'https://www.linkedin.com/in/nasira-hoori-65355a9',
-    },
-  },
+  // {
+  //   name: 'team.nasiraHoori.name',
+  //   role: 'team.nasiraHoori.role',
+  //   image: kamranAhsan,
+  //   bio: 'team.nasiraHoori.bio',
+  //   social: {
+  //     linkedin: 'https://www.linkedin.com/in/nasira-hoori-65355a9',
+  //   },
+  // },
 ];
 
 const containerVariants = {
