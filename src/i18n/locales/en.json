@@ -261,7 +261,7 @@
       },
       "agriPhone": {
         "title": "AgriPhone",
-        "description": "Specialized farming device with fingerprint scanner, LoRaWAN connectivity, and soil analytics",
+        "description": "Smart farming device with fingerprint ID, LoRaWAN, and soil analytics",
         "capabilities": {
           "fingerprintScanner": "Fingerprint Scanner",
           "loraWanConnectivity": "LoRaWAN Connectivity",

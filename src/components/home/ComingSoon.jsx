@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { 
   FaChevronLeft, FaChevronRight, FaGraduationCap, FaNewspaper, FaMicroscope, 
   FaUsers, FaRobot, FaShoppingCart, FaPhoneAlt, FaThermometerHalf, FaPlane, 
@@ -12,7 +15,6 @@ import {
 
 const ComingSoon = () => {
   const { t } = useTranslation();
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const upcomingFeatures = [
     {
@@ -127,20 +129,51 @@ const ComingSoon = () => {
     }
   ];
 
-  // Auto-swipe functionality with 5 second delay
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % upcomingFeatures.length);
-    }, 5000); // Changed to 5000ms (5 seconds)
-    return () => clearInterval(interval);
-  }, [upcomingFeatures.length]);
+  const CustomPrevArrow = ({ onClick }) => (
+    <button
+      onClick={onClick}
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+    >
+      <FaChevronLeft className="text-gray-600 dark:text-gray-300" />
+    </button>
+  );
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % upcomingFeatures.length);
-  };
+  const CustomNextArrow = ({ onClick }) => (
+    <button
+      onClick={onClick}
+      className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+    >
+      <FaChevronRight className="text-gray-600 dark:text-gray-300" />
+    </button>
+  );
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + upcomingFeatures.length) % upcomingFeatures.length);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   return (
@@ -161,87 +194,89 @@ const ComingSoon = () => {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Navigation Buttons */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-          >
-            <FaChevronLeft className="text-gray-600 dark:text-gray-300" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
-          >
-            <FaChevronRight className="text-gray-600 dark:text-gray-300" />
-          </button>
-
-          {/* Carousel */}
-          <div className="overflow-hidden">
-            <AnimatePresence mode="wait">
+        <div className="relative px-4 py-8">
+          <Slider {...settings} className="coming-soon-slider">
+            {upcomingFeatures.map((feature, index) => (
               <motion.div
-                key={currentSlide}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
-                {upcomingFeatures.slice(currentSlide, currentSlide + 3).map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
-                    className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="text-brand mb-4 flex justify-center">
-                      {feature.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      {feature.description}
-                    </p>
-                    
-                    {feature.capabilities && (
-                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                          {t('comingSoon.keyFeatures')}:
-                        </h4>
-                        <div className="flex flex-wrap gap-3">
-                          {feature.capabilities.map((capability, idx) => (
-                            <div 
-                              key={idx} 
-                              className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full text-xs"
-                            >
-                              <span className="text-brand">{capability.icon}</span>
-                              <span className="text-gray-700 dark:text-gray-300">{capability.text}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Pagination Dots */}
-          <div className="flex justify-center mt-8 gap-2">
-            {upcomingFeatures.map((_, index) => (
-              <button
                 key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  index === currentSlide
-                    ? 'bg-brand'
-                    : 'bg-gray-300 dark:bg-gray-600'
-                }`}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20
+                }}
+                whileHover={{ 
+                  scale: 1.03,
+                  transition: { duration: 0.2 }
+                }}
+                className="px-4 py-2"
+              >
+                <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div className="text-brand mb-4 flex justify-center">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 min-h-[3em] line-clamp-2">
+                    {feature.description}
+                  </p>
+                  
+                  {feature.capabilities && (
+                    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                        {t('comingSoon.keyFeatures')}:
+                      </h4>
+                      <div className="flex flex-col gap-2">
+                        {feature.capabilities.map((capability, idx) => (
+                          <motion.div 
+                            key={idx}
+                            className="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-3 py-2 rounded-lg text-sm"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2 + idx * 0.1 }}
+                          >
+                            <span className="text-brand">{capability.icon}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{capability.text}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </Slider>
         </div>
       </div>
+
+      <style jsx global>{`
+        .coming-soon-slider .slick-dots {
+          bottom: -20px;
+        }
+        .coming-soon-slider .slick-dots li button:before {
+          color: #9CA3AF;
+          opacity: 0.5;
+        }
+        .coming-soon-slider .slick-dots li.slick-active button:before {
+          color: #22C55E;
+          opacity: 1;
+        }
+        .coming-soon-slider .slick-track {
+          display: flex;
+          align-items: stretch;
+          padding: 1rem 0;
+        }
+        .coming-soon-slider .slick-slide {
+          height: auto;
+        }
+        .coming-soon-slider .slick-slide > div {
+          height: 100%;
+        }
+      `}</style>
     </section>
   );
 };
