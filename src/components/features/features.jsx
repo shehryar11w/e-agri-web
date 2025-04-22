@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCloud, FaChevronLeft, FaChevronRight, FaShoppingCart, FaTractor, FaWarehouse, FaChartLine } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaWarehouse, FaChartLine } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
