@@ -12,6 +12,7 @@ import {
   FaSearch, FaDatabase, FaLightbulb, FaGlobe, FaUserFriends, FaComments,
   FaBrain, FaChartBar, FaCog, FaUtensils, FaTruck, FaWarehouse, FaClipboardCheck
 } from 'react-icons/fa';
+import DroneSvg from '../../assets/modulesLogos/camera-drone 1 (1).svg';
 
 const ComingSoon = () => {
   const { t } = useTranslation();
@@ -60,7 +61,7 @@ const ComingSoon = () => {
     {
       title: t('comingSoon.features.droneServices.title'),
       description: t('comingSoon.features.droneServices.description'),
-      icon: <FaPlane className="w-8 h-8" />,
+      icon: <img src={DroneSvg} alt="Drone" className=" h-8" />,
       capabilities: [
         { icon: <FaSatellite className="w-5 h-5" />, text: t('comingSoon.features.droneServices.capabilities.aerialMapping') },
         { icon: <FaLeaf className="w-5 h-5" />, text: t('comingSoon.features.droneServices.capabilities.precisionSpraying') },
