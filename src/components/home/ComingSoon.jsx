@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { 
@@ -154,10 +154,10 @@ const ComingSoon = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            On the Horizon
+            {t('comingSoon.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Exciting new and innovative features just around the corner to revolutionize your farming experience
+            {t('comingSoon.description')}
           </p>
         </motion.div>
 

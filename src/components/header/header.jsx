@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon, FaLinkedinIn } from 'react-icons/fa';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../language-switcher/language-switcher';
@@ -121,6 +121,17 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
+          <motion.a
+            href="https://www.linkedin.com/showcase/e-agri-smart-farming-solutions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaLinkedinIn className="w-5 h-5" />
+          </motion.a>
+
           <motion.button 
             onClick={toggleTheme}
             className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
@@ -154,7 +165,18 @@ const Header = () => {
             animate="open"
             exit="closed"
           >
-            <div className="flex justify-between mb-12">
+            <div className="flex justify-between items-center mb-12">
+              <motion.a
+                href="https://www.linkedin.com/showcase/e-agri-smart-farming-solutions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaLinkedinIn className="w-6 h-6" />
+              </motion.a>
+
               <motion.button 
                 onClick={toggleTheme}
                 className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
@@ -163,6 +185,7 @@ const Header = () => {
               >
                 {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
               </motion.button>
+
               <motion.button 
                 className="text-gray-900 dark:text-white text-2xl p-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 onClick={() => setIsOpen(false)}

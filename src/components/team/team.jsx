@@ -122,7 +122,7 @@ const Team = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            The Team Behind
+            {t('team.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
             {t('team.description')}

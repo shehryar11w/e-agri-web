@@ -19,8 +19,8 @@
     "dashboardAlt": "Agriculture Technology Dashboard"
   },
   "features": {
-    "title": "Our Features",
-    "subtitle": "See how our comprehensive toolset can transform your agricultural operations",
+    "title": " Empowering Farmers with Smarter Tools",
+    "subtitle": "From streamlining daily operations to improving crop health, our tools make it easier than ever to achieve your farming goals. Harness innovation to take your fields to the next level of growth - season after season",
     "learnMore": "Learn More",
     "clickToLearnMore": "Click to learn more",
     "eAdvisor": {
@@ -95,12 +95,12 @@
     },
     "nplRestructure": {
       "title": "NPL Restructure",
-      "description": "Comprehensive non-performing loan management",
+      "description": "Comprehensive Non-Performing Loan Management",
       "details": "Effectively manage and restructure non-performing loans with our specialized platform. Analyze loan performance, develop restructuring plans, and track recovery progress. Our system provides tools for risk assessment, payment scheduling, and compliance monitoring."
     },
     "lrms": {
       "title": "LRMS",
-      "description": "Land record management system",
+      "description": "Land Record Management System",
       "details": "Maintain accurate and secure land records with our digital management system. Track property ownership, land use, and agricultural activities. Ensure compliance with land regulations and facilitate transparent land transactions."
     }
   },
@@ -161,7 +161,7 @@
     }
   },
   "team": {
-        "title": "Meet Our Team",
+        "title": "The Team Behind",
         "description": "The passionate people behind our success",
         "adnanSyed": {
           "name": "Adnan Syed",
@@ -191,62 +191,54 @@
       },
   "partners": {
     "title": "Our Partners",
-    "description": "Collaborating with industry leaders to revolutionize agriculture"
+    "description": "Collaborating with industry leaders"
   },
   "timeline": {
-    "title": "Our Journey",
-    "description": "Roadmap to revolutionizing agriculture in Pakistan",
-    "events": [
-      {
-        "year": "September 2024",
-        "title": "Inception",
-        "description": "Initial idea and concept development of E-Agri platform."
+    "title": "A Roadmap for Revolutionizing Agriculture Across Pakistan",
+    "description": "Our strategic timeline for transforming Pakistan's agricultural landscape",
+    "events": {
+      "0": {
+        "title": "Concept Development",
+        "description": "Finalizing core concepts and feature specifications"
       },
-      {
-        "year": "October 2024",
-        "title": "Research",
-        "description": "Comprehensive market research and stakeholder analysis."
+      "1": {
+        "title": "Proof of Concept",
+        "description": "Executing Proof of Concept development, followed by initial testing"
       },
-      {
-        "year": "November 2024",
-        "title": "Initial Framework",
-        "description": "Development of core platform architecture and framework."
+      "2": {
+        "title": "Market Analysis",
+        "description": "Conducting comprehensive market research and user needs assessment"
       },
-      {
-        "year": "December 2024",
-        "title": "POC",
-        "description": "Proof of concept development and initial testing."
+      "3": {
+        "title": "Platform Development",
+        "description": "Building the core platform infrastructure and essential features"
       },
-      {
-        "year": "January 2025",
-        "title": "Commerce Platform",
-        "description": "Launch of the e-commerce platform for agricultural products."
+      "4": {
+        "title": "Mobile App Development",
+        "description": "Creating intuitive mobile applications for farmers and stakeholders"
       },
-      {
-        "year": "February 2025",
-        "title": "Warehouse & BPR",
-        "description": "Warehouse designs and Business Process Reengineering implementation."
+      "5": {
+        "title": "Warehouse Integration",
+        "description": "Warehouse designs and business process re-engineering implementation"
       },
-      {
-        "year": "March 2025",
-        "title": "Precision Farming",
-        "description": "Implementation of precision farming and diagnostics modules."
+      "6": {
+        "title": "Testing & Optimization",
+        "description": "Rigorous testing and performance optimization across all platforms"
       },
-      {
-        "year": "April 2025",
-        "title": "Official Launch",
-        "description": "Official platform launch with comprehensive features."
+      "7": {
+        "title": "Launch Preparation",
+        "description": "Final preparations and marketing campaigns for platform launch"
       },
-      {
-        "year": "Current",
-        "title": "Expansion Phase",
-        "description": "Onboarding banks, vendors, farmers and expanding our team of experts for national integrations with all stakeholders."
+      "8": {
+        "title": "Platform Launch",
+        "description": "Official launch of E-Agri platform with initial user onboarding",
+        "year": "Current"
       }
-    ]
+    }
   },
   "comingSoon": {
-    "title": "Coming Soon",
-    "description": "Exciting new features coming to enhance your farming experience",
+    "title": "On the Horizon",
+    "description": "Exciting new and innovative features just around the corner to revolutionize your farming experience",
     "keyFeatures": "Key Features",
     "features": {
       "eLearn": {

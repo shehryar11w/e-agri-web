@@ -136,7 +136,7 @@ const Footer = () => {
           </motion.div>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Copyright */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -156,19 +156,6 @@ const Footer = () => {
                 Elixir Flare
               </a>
             </motion.p>
-            <motion.div variants={itemVariants} className="flex space-x-4">
-              {[FaLinkedinIn].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="https://www.linkedin.com/showcase/e-agri-smart-farming-solutions"
-                  className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-brand hover:text-white dark:hover:bg-brand dark:hover:text-white transition-colors"
-                  variants={socialLinkVariants}
-                  whileHover="hover"
-                >
-                  <Icon />
-                </motion.a>
-              ))}
-            </motion.div>
           </div>
         </motion.div>
       </div>
