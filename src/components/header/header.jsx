@@ -154,17 +154,17 @@ const Header = () => {
             animate="open"
             exit="closed"
           >
-            <div className="flex justify-between mb-8">
+            <div className="flex justify-between mb-12">
               <motion.button 
                 onClick={toggleTheme}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {isDarkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
+                {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
               </motion.button>
               <motion.button 
-                className="text-gray-900 dark:text-white text-xl p-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="text-gray-900 dark:text-white text-2xl p-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 onClick={() => setIsOpen(false)}
                 whileTap={{ scale: 0.95 }}
               >
@@ -175,7 +175,7 @@ const Header = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-4 text-lg text-gray-600 dark:text-gray-300 border-b border-gray-100 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                className="block py-6 text-lg text-gray-600 dark:text-gray-300 border-b border-gray-100 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                 variants={navItemVariants}
                 whileHover={{ x: 10, color: "#059669" }}
                 onClick={() => setIsOpen(false)}
@@ -183,7 +183,7 @@ const Header = () => {
                 {item.name}
               </motion.a>
             ))}
-            <div className="mt-8">
+            <div className="mt-12">
               <LanguageSwitcher />
             </div>
           </motion.nav>
