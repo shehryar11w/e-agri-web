@@ -56,7 +56,7 @@ const teamData = [
   },
   {
     name: 'team.nasiraHoori.name',
-    role: 'Nasira Hoori is an internationally trained executive search specialist with over 17 years of experience in strategic recruitment and talent acquisition. As the founder of Nasira Hoori Executive Search, she has successfully connected thousands of professionals with leading organizations and startups across Pakistan, the Middle East, KSA, Australia, and North America.',
+    role: 'team.nasiraHoori.role',
     image: nasiraHoori,
     bio: 'team.nasiraHoori.bio',
     social: {
