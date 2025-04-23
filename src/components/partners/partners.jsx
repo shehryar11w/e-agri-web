@@ -12,13 +12,12 @@ const Partners = () => {
   const partners = [
     { name: 'Euronet', logo: euronet },
     { name: 'CMA', logo: cma },
-    { name: 'Syngenta', logo: syngenta },
+    { name: 'Syngenta', logo: syngenta, url: 'https://www.syngenta.com/' },
   ];
 
   const controls = useAnimation();
 
-  useEffect(() => {
-    // Start the animation
+  const startAnimation = () => {
     controls.start({
       x: [0, -1000],
       transition: {
@@ -27,22 +26,54 @@ const Partners = () => {
         ease: "linear",
       }
     });
-  }, [controls]);
+  };
 
-  // Handle focus events
-  const handleFocus = () => {
+  useEffect(() => {
+    startAnimation();
+  }, []);
+
+  // Handle hover events
+  const handleMouseEnter = () => {
     controls.stop();
   };
 
-  const handleBlur = () => {
-    controls.start({
-      x: [0, -1000],
-      transition: {
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear",
-      }
-    });
+  const handleMouseLeave = () => {
+    startAnimation();
+  };
+
+  const renderPartnerLogo = (partner, index, suffix = '') => {
+    const key = `${partner.name}-${index}${suffix}`;
+    const content = (
+      <img 
+        src={partner.logo} 
+        alt={`${partner.name} logo`}
+        className="w-[140px] h-[80px] object-contain opacity-100"
+      />
+    );
+
+    const containerContent = partner.url ? (
+      <a 
+        href={partner.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-full h-full"
+      >
+        {content}
+      </a>
+    ) : content;
+
+    return (
+      <motion.div
+        key={key}
+        className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 p-6 rounded-xl shadow-lg backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50 hover:shadow-xl transition-all duration-300"
+        whileHover={{ 
+          scale: 1.1,
+          transition: { duration: 0.2 }
+        }}
+      >
+        {containerContent}
+      </motion.div>
+    );
   };
 
   return (
@@ -63,8 +94,8 @@ const Partners = () => {
 
         <div 
           className="relative w-full h-[180px] overflow-hidden"
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <motion.div 
             className="absolute inset-0 flex items-center gap-8"
@@ -72,62 +103,17 @@ const Partners = () => {
           >
             {/* First set of logos */}
             <div className="flex items-center gap-8 ml-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={`${partner.name}-${index}`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 p-6 rounded-xl shadow-lg  backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain opacity-100"
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </motion.div>
-              ))}
+              {partners.map((partner, index) => renderPartnerLogo(partner, index))}
             </div>
 
             {/* Duplicate set for seamless loop */}
             <div className="flex items-center gap-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={`${partner.name}-${index}-duplicate`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 rounded-xl shadow-lg  backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain opacity-100"
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </motion.div>
-              ))}
+              {partners.map((partner, index) => renderPartnerLogo(partner, index, '-duplicate'))}
             </div>
 
             {/* Second duplicate set for extra smoothness */}
             <div className="flex items-center gap-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={`${partner.name}-${index}-duplicate-2`}
-                  className="flex items-center justify-center w-[200px] h-[120px] bg-white/80 p-6 rounded-xl shadow-lg backdrop-blur-md dark:backdrop-blur-lg border border-white/20 dark:border-gray-700/50"
-                  onFocus={handleFocus}
-                  onBlur={handleBlur}
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} logo`}
-                    className="w-[140px] h-[80px] object-contain opacity-100"
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </motion.div>
-              ))}
+              {partners.map((partner, index) => renderPartnerLogo(partner, index, '-duplicate-2'))}
             </div>
           </motion.div>
         </div>
