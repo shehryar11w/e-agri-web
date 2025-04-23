@@ -30,28 +30,28 @@ const teamData = [
     },
   },
   {
-    name: 'Nouman Islam',
-    role: 'VP - IT & Trading Platform',
+    name: 'team.noumanIslam.name',
+    role: 'team.noumanIslam.role',
     image: NoumanImg,
-    bio: 'Nouman Islam, with nearly 20 years of experience in IT and capital markets, brings extensive expertise in leading complex technology initiatives - particularly in the design and development of trading platforms and enterprise systems that drive scalable, tech-enabled transformation. He played a crucial role in the successful launch and implementation of a trading system at the Pakistan Stock Exchange (PSX), replacing a legacy platform that had been in place for over two decades.',
+    bio: 'team.noumanIslam.bio',
     social: {
       linkedin: 'https://www.linkedin.com/in/noumanislam/',
     },
   },
   {
-    name: 'Zulquarnain',
-    role: 'Senior Lead II',
+    name: 'team.zulquarnain.name',
+    role: 'team.zulquarnain.role',
     image: ZulquarnainImg,
-    bio: 'Zulquarnain brings over a decade of hands-on experience in software engineering, with deep expertise in cloud infrastructure, API design, fintech systems, and scalable backend services. Driven by a passion for innovation, he combines technical excellence with practical impact, playing a key role in advancing E-Agri’s mission to transform agriculture through technology.',
+    bio: 'team.zulquarnain.bio',
     social: {
       linkedin: 'https://www.linkedin.com/in/zulquarnain-9322139/',
     },
   },
   {
-    name: 'Musharraf Hussain',
-    role: 'Senior Lead I',
+    name: 'team.musharrafHussain.name',
+    role: 'team.musharrafHussain.role',
     image: MusharrafImg,
-    bio: 'Seasoned Software Engineer with over two decades of experience spanning the full software development lifecycle. Specializes in Object-Oriented Design and Analysis, with a strong track record in Fintech and Trading Systems, including card payment processing, order management, and real-time market data integration. Recognized for delivering scalable, high-performance solutions and excelling in fast-paced environments. Demonstrates a proactive approach to innovation and a proven ability to tackle complex technical challenges with agility and precision.',
+    bio: 'team.musharrafHussain.bio',
     social: {
       linkedin: 'https://www.linkedin.com/in/musharraf-hussain-932b3329/',
     },
