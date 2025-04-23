@@ -9,7 +9,7 @@ import AbdulRehmanImg from '../../assets/Abdul Rehman.png';
 import NasiraImg from '../../assets/Nasira.png';
 import NoumanImg from '../../assets/Nouman.png';
 import ZulquarnainImg from '../../assets/Zulquarnain.png';
-import MusharrafImg from '../../assets/Musharraf.png';
+import MusharrafImg from '../../assets/MusharrafImg.png';
 const teamData = [
   {
     name: 'team.adnanSyed.name',
