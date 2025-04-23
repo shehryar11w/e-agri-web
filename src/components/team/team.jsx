@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ceoImage from '../../assets/AdnanSye.png';
-import cooImage from '../../assets/coo.png';
-import kamranAhsan from '../../assets/KA.png';
-import abdulRehman from '../../assets/AbdulRehman.png';
+import ceoImage from '../../assets/Adnan.png';
+import cooImage from '../../assets/Shehzad.png';
+import kamranAhsan from '../../assets/Kamran.png';
+import abdulRehman from '../../assets/Abdul Rehman.png';
 import nasiraHoori from '../../assets/nHoori.jpg';
-import musharrafHussain from '../../assets/musharraf.png';
+import musharrafHussain from '../../assets/Musharraf.png';
 const teamData = [
   {
     name: 'team.adnanSyed.name',
@@ -31,36 +31,36 @@ const teamData = [
     name: 'Nouman Islam',
     role: 'VP - IT & Trading Platform',
     image: '',
-    bio: '',
+    bio: 'Nouman Islam, with nearly 20 years of experience in IT and capital markets, brings extensive expertise in leading complex technology initiatives - particularly in the design and development of trading platforms and enterprise systems that drive scalable, tech-enabled transformation. He played a crucial role in the successful launch and implementation of a trading system at the Pakistan Stock Exchange (PSX), replacing a legacy platform that had been in place for over two decades.',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/noumanislam/',
     },
   },
   {
     name: 'Zulquarnain',
     role: 'Senior Lead II',
     image: '',
-    bio: '',
+    bio: 'Zulquarnain brings over a decade of hands-on experience in software engineering, with deep expertise in cloud infrastructure, API design, fintech systems, and scalable backend services. Driven by a passion for innovation, he combines technical excellence with practical impact, playing a key role in advancing E-Agri’s mission to transform agriculture through technology.',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/zulquarnain-9322139/',
     },
   },
   {
     name: 'Musharraf Hussain',
     role: 'Senior Lead I',
     image: musharrafHussain,
-    bio: '',
+    bio: 'Seasoned Software Engineer with over two decades of experience spanning the full software development lifecycle. Specializes in Object-Oriented Design and Analysis, with a strong track record in Fintech and Trading Systems, including card payment processing, order management, and real-time market data integration. Recognized for delivering scalable, high-performance solutions and excelling in fast-paced environments. Demonstrates a proactive approach to innovation and a proven ability to tackle complex technical challenges with agility and precision.',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/musharraf-hussain-932b3329/',
     },
   },
   {
     name: 'team.nasiraHoori.name',
-    role: 'team.nasiraHoori.role',
+    role: 'Nasira Hoori is an internationally trained executive search specialist with over 17 years of experience in strategic recruitment and talent acquisition. As the founder of Nasira Hoori Executive Search, she has successfully connected thousands of professionals with leading organizations and startups across Pakistan, the Middle East, KSA, Australia, and North America.',
     image: nasiraHoori,
     bio: 'team.nasiraHoori.bio',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/nasira-hoori-65355a9/',
     },
   },
   {
