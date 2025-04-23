@@ -32,7 +32,6 @@ const Partners = () => {
     startAnimation();
   }, []);
 
-  // Handle hover events
   const handleMouseEnter = () => {
     controls.stop();
   };
