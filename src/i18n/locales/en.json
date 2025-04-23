@@ -131,6 +131,7 @@
       "selectCategory": "Select a category",
       "name": "Name",
       "email": "Email",
+      "contact": "Contact Number",
       "subject": "Subject",
       "message": "Message",
       "submit": "Send Message",
