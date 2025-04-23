@@ -10,7 +10,7 @@ const Partners = () => {
   const { t } = useTranslation();
 
   const partners = [
-    { name: 'Euronet', logo: euronet },
+    { name: 'Euronet', logo: euronet, url: 'https://euronetpakistan.com/' },
     { name: 'CMA', logo: cma },
     { name: 'Syngenta', logo: syngenta, url: 'https://www.syngenta.com/' },
   ];
