@@ -2,17 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import ceoImage from '../../assets/Adnan.png';
-import cooImage from '../../assets/Shehzad.png';
-import kamranAhsan from '../../assets/Kamran.png';
-import abdulRehman from '../../assets/Abdul Rehman.png';
-import nasiraHoori from '../../assets/nHoori.jpg';
-import musharrafHussain from '../../assets/Musharraf.png';
+import AdnanImg from '../../assets/Adnan.png';
+import ShehzadImg from '../../assets/Shehzad.png';
+import KamranImg from '../../assets/Kamran.png';
+import AbdulRehmanImg from '../../assets/Abdul Rehman.png';
+import NasiraImg from '../../assets/Nasira.png';
+import NoumanImg from '../../assets/Nouman.png';
+import ZulquarnainImg from '../../assets/Zulquarnain.png';
+import MusharrafImg from '../../assets/Musharraf.png';
 const teamData = [
   {
     name: 'team.adnanSyed.name',
     role: 'team.adnanSyed.role',
-    image: ceoImage,
+    image: AdnanImg,
     bio: 'team.adnanSyed.bio',
     social: {
       linkedin: '#' 
@@ -21,7 +23,7 @@ const teamData = [
   {
     name: 'team.shehzadMakhani.name',
     role: 'team.shehzadMakhani.role',
-    image: cooImage,
+    image: ShehzadImg,
     bio: 'team.shehzadMakhani.bio',
     social: {
       linkedin: 'https://pk.linkedin.com/in/shm13041977'
@@ -30,7 +32,7 @@ const teamData = [
   {
     name: 'Nouman Islam',
     role: 'VP - IT & Trading Platform',
-    image: '',
+    image: NoumanImg,
     bio: 'Nouman Islam, with nearly 20 years of experience in IT and capital markets, brings extensive expertise in leading complex technology initiatives - particularly in the design and development of trading platforms and enterprise systems that drive scalable, tech-enabled transformation. He played a crucial role in the successful launch and implementation of a trading system at the Pakistan Stock Exchange (PSX), replacing a legacy platform that had been in place for over two decades.',
     social: {
       linkedin: 'https://www.linkedin.com/in/noumanislam/',
@@ -39,7 +41,7 @@ const teamData = [
   {
     name: 'Zulquarnain',
     role: 'Senior Lead II',
-    image: '',
+    image: ZulquarnainImg,
     bio: 'Zulquarnain brings over a decade of hands-on experience in software engineering, with deep expertise in cloud infrastructure, API design, fintech systems, and scalable backend services. Driven by a passion for innovation, he combines technical excellence with practical impact, playing a key role in advancing E-Agri’s mission to transform agriculture through technology.',
     social: {
       linkedin: 'https://www.linkedin.com/in/zulquarnain-9322139/',
@@ -48,7 +50,7 @@ const teamData = [
   {
     name: 'Musharraf Hussain',
     role: 'Senior Lead I',
-    image: musharrafHussain,
+    image: MusharrafImg,
     bio: 'Seasoned Software Engineer with over two decades of experience spanning the full software development lifecycle. Specializes in Object-Oriented Design and Analysis, with a strong track record in Fintech and Trading Systems, including card payment processing, order management, and real-time market data integration. Recognized for delivering scalable, high-performance solutions and excelling in fast-paced environments. Demonstrates a proactive approach to innovation and a proven ability to tackle complex technical challenges with agility and precision.',
     social: {
       linkedin: 'https://www.linkedin.com/in/musharraf-hussain-932b3329/',
@@ -57,7 +59,7 @@ const teamData = [
   {
     name: 'team.nasiraHoori.name',
     role: 'team.nasiraHoori.role',
-    image: nasiraHoori,
+    image: NasiraImg,
     bio: 'team.nasiraHoori.bio',
     social: {
       linkedin: 'https://www.linkedin.com/in/nasira-hoori-65355a9/',
@@ -66,7 +68,7 @@ const teamData = [
   {
     name: 'team.kamranAhsan.name',
     role: 'team.kamranAhsan.role',
-    image: kamranAhsan,
+    image: KamranImg,
     bio: 'team.kamranAhsan.bio',
     social: {
       linkedin: '#',
@@ -75,7 +77,7 @@ const teamData = [
   {
     name: 'team.abdulRehman.name',
     role: 'team.abdulRehman.role',
-    image: abdulRehman,
+    image: AbdulRehmanImg,
     bio: 'team.abdulRehman.bio',
     social: {
       linkedin: '#',
