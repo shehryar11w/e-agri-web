@@ -178,6 +178,21 @@
           "role": "Advisory Board Member",
           "bio": "Dean of Engineering at MiTE, PhD from Staffordshire University UK. Distinguished computer scientist with multiple patents and 100+ publications in Information Systems and Mobile Technology. Passionate about technology applications in agriculture."
         },
+        "noumanIslam": {
+          "name": "Nouman Islam",
+          "role": "VP - IT & Trading Platform",
+          "bio": "Technology leader with 20 years of experience in IT and capital markets, specializing in trading platforms and enterprise systems. Led the successful implementation of a new trading system at Pakistan Stock Exchange (PSX)."
+        },
+        "zulquarnain": {
+          "name": "Zulquarnain",
+          "role": "Senior Lead II",
+          "bio": "Experienced software engineer with over 10 years of expertise in cloud infrastructure, API design, and scalable backend services. Passionate about using technology to advance E-Agri's agricultural transformation mission."
+        },
+        "musharrafHussain": {
+          "name": "Musharraf Hussain",
+          "role": "Senior Lead I",
+          "bio": "Seasoned Software Engineer with over 20 years of experience in full-stack development. Expert in Object-Oriented Design and Fintech systems, specializing in payment processing and real-time trading platforms. Known for delivering scalable solutions and tackling complex technical challenges."
+        },
         "abdulRehman": {
           "name": "Professor Abdul Rehman Mahmood",
           "role": "Advisory Board Member",
