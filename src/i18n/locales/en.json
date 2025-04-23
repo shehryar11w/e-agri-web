@@ -139,7 +139,7 @@
   },
   "about": {
     "title": "Revolutionizing Agriculture in Pakistan",
-    "description": "Our platform combines traditional agricultural knowledge with cutting-edge technology to transform farming practices across Pakistan. We provide farmers with AI-powered insights, real-time weather monitoring, and direct access to agricultural experts.",
+    "description": "Our platform combines traditional agricultural knowledge with cutting-edge technology to transform farming practices across Pakistan. We provide farmers with AI-powered insights, real-time weather monitoring, and direct access to agricultural experts, news and research.",
     "imageAlt": "Pakistani farmers using E-Agri app",
     "features": {
       "mission": {
@@ -165,7 +165,7 @@
         "description": "The passionate people behind our success",
         "adnanSyed": {
           "name": "Adnan Syed",
-          "role": "Founder and CEO",
+          "role": "Founder & CEO",
           "bio": "Tech entrepreneur with 25+ years of experience in the USA, specializing in scaling modern ventures. Back in Pakistan, combining technical expertise and strategic vision to transform agriculture through digital innovation."
         },
         "shehzadMakhani": {
@@ -181,17 +181,17 @@
         "noumanIslam": {
           "name": "Nouman Islam",
           "role": "VP - IT & Trading Platform",
-          "bio": "Technology leader with 20 years of experience in IT and capital markets, specializing in trading platforms and enterprise systems. Led the successful implementation of a new trading system at Pakistan Stock Exchange (PSX)."
+          "bio": "With nearly 20 years of experience in IT and capital markets, he brings extensive expertise in leading complex technology initiatives. He played a crucial role in the successful implementation of a trading system at the Pakistan Stock Exchange (PSX)."
         },
         "zulquarnain": {
           "name": "Zulquarnain",
           "role": "Senior Lead II",
-          "bio": "Experienced software engineer with over 10 years of expertise in cloud infrastructure, API design, and scalable backend services. Passionate about using technology to advance E-Agri's agricultural transformation mission."
+          "bio": "Zulquarnain is a seasoned software engineering, with expertise in cloud infrastructure, API design, fintech systems, and backend services. He combines technical excellence with practical impact, playing a key role in advancing E-Agri's mission to transform agriculture through technology."
         },
         "musharrafHussain": {
           "name": "Musharraf Hussain",
           "role": "Senior Lead I",
-          "bio": "Seasoned Software Engineer with over 20 years of experience in full-stack development. Expert in Object-Oriented Design and Fintech systems, specializing in payment processing and real-time trading platforms. Known for delivering scalable solutions and tackling complex technical challenges."
+          "bio": "Seasoned Software Engineer with 20+ years in SDLC, specializing in OOD, fintech, and trading systems. Delivers scalable solutions in payment processing, order management, and market data. Known for precision, agility, and solving complex technical challenges."
         },
         "abdulRehman": {
           "name": "Professor Abdul Rehman Mahmood",
