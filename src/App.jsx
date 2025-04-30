@@ -9,8 +9,6 @@ import Timeline from './components/timeline/timeline'
 import Team from './components/team/team'
 import Footer from './components/footer/footer'
 import About from './components/about/about'
-import Navbar from './components/navbar/navbar'
-import LanguageSwitcher from './components/language-switcher/language-switcher'
 import Download from './components/download/download'
 import Contact from './components/contact/contact'
 import ComingSoon from './components/home/ComingSoon'
@@ -19,9 +17,9 @@ const App = () => {
   return (
     <ThemeProvider>
       <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
-        <Navbar>
+        {/* <Navbar>
           <LanguageSwitcher />
-        </Navbar>
+        </Navbar> */}
         <Header />
         <main className="flex-1 pt-[70px]">
           <ChatClient />

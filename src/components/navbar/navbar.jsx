@@ -34,14 +34,19 @@ const Navbar = ({ children }) => {
             {children}
           </div>
 
-          {/* Mobile menu button */}
-          <motion.button
-            className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-brand dark:hover:text-brand"
-            onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </motion.button>
+          <div className="flex items-center gap-4 md:hidden">
+            {/* Language Selector for Mobile */}
+            {children}
+            
+            {/* Mobile menu button */}
+            <motion.button
+              className="p-2 rounded-md text-gray-700 dark:text-gray-200 hover:text-brand dark:hover:text-brand"
+              onClick={() => setIsOpen(!isOpen)}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </motion.button>
+          </div>
         </div>
       </div>
 
@@ -81,9 +86,6 @@ const Navbar = ({ children }) => {
           >
             {t('nav.contact')}
           </a>
-          <div className="px-3 py-2">
-            {children}
-          </div>
         </div>
       </motion.div>
     </nav>

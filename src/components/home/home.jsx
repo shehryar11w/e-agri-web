@@ -91,7 +91,6 @@ const Hero = () => {
             />
             {/* Glow effect */}
             <div className="absolute inset-0 bg-brand/10 blur-3xl transform -translate-y-4" />
-            
           </div>
         </motion.div>
 

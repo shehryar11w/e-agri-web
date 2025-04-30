@@ -132,6 +132,7 @@
       "name": "Name",
       "email": "Email",
       "subject": "Subject",
+      "phone": "Phone Number",
       "message": "Message",
       "submit": "Send Message",
       "submitting": "Sending...",
@@ -173,7 +174,7 @@
         "shehzadMakhani": {
           "name": "Shehzad Makhani",
           "role": "Chief Operating Officer",
-          "bio": "Over two decades of experience in operations, risk management, and financial systems as COO at Agri. Previously served as Chief Risk Officer and Head of Operations at Pakistan Mercantile Exchange (PMEX)."
+          "bio": "Bringing over 20 years of leadership experience in operations, risk management, and financial systems, currently serving as Chief Operating Officer at Agri. Formerly held key executive roles at Pakistan Mercantile Exchange (PMEX), including Chief Risk Officer and Head of Operations, where he was instrumental in shaping strategic initiatives and operational frameworks."
         },
         "kamranAhsan": {
           "name": "Professor Dr. Kamran Ahsan",

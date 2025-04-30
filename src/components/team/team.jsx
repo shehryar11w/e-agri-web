@@ -80,7 +80,7 @@ const teamData = [
     image: AbdulRehmanImg,
     bio: 'team.abdulRehman.bio',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/armahmood',
     },
   },
 ];
