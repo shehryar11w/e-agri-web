@@ -1,13 +1,35 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaArrowRight, FaLeaf, FaTractor, FaSeedling, FaHandshake } from 'react-icons/fa';
+import { FaArrowRight, FaLeaf, FaTractor, FaSeedling, FaHandshake, FaTimes } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import Dashboard from '../../assets/Dashboard.png';
 import HeroBkg from '../../assets/HeroBkg.png';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [showLanguagePopup, setShowLanguagePopup] = useState(false);
   const sectionRef = useRef(null);
+  
+  const languages = [
+    { code: 'en', name: 'English' },
+    { code: 'ur', name: 'اردو' },
+    { code: 'sd', name: 'سنڌي' },
+    { code: 'ps', name: 'پشتو' },
+  ];
+
+  useEffect(() => {
+    const hasSelectedLanguage = localStorage.getItem('languagePreferenceSet');
+    if (!hasSelectedLanguage) {
+      setShowLanguagePopup(true);
+    }
+  }, []);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('languagePreferenceSet', 'true');
+    setShowLanguagePopup(false);
+  };
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end start'],
@@ -56,6 +78,47 @@ const Hero = () => {
           <FaHandshake className="w-20 h-20" />
         </div>
       </div>
+
+      {/* Language Preference Popup */}
+      {showLanguagePopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" style={{ zIndex: 99999 }}>
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-[90%] sm:w-full mx-auto">
+            <button 
+              onClick={() => {
+                setShowLanguagePopup(false);
+                localStorage.setItem('languagePreferenceSet', 'true');
+              }}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            >
+              <FaTimes className="w-5 h-5" />
+            </button>
+            
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              {t('languagePreference.title', 'Select Your Language')}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              {t('languagePreference.description', 'Please choose your preferred language for the best experience')}
+            </p>
+            
+            <div className="grid grid-cols-1 gap-3">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => changeLanguage(lang.code)}
+                  className={`w-full text-left px-4 py-3 rounded-lg border transition-colors
+                    ${i18n.language === lang.code
+                      ? 'border-brand bg-brand/10 text-brand'
+                      : 'border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200'
+                    }
+                  `}
+                >
+                  {lang.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center relative z-10">
         {/* Dashboard Image */}
