@@ -131,6 +131,7 @@
       "selectCategory": "Select a category",
       "name": "Name",
       "email": "Email",
+      "contact": "Contact Number",
       "subject": "Subject",
       "phone": "Phone Number",
       "message": "Message",
@@ -204,7 +205,7 @@
         "nasiraHoori": {
           "name": "Nasira Hoori",
           "role": "Advisory Board Member",
-          "bio": "Renowned executive search specialist with 17 years of national and multinational experience in Pakistan. Has placed thousands of professionals in the corporate sector, including Pakistan's leading startups."
+          "bio": "An internationally famed executive search specialist with over 17 years of experience in strategic recruitment and talent acquisition. She has successfully connected thousands of professionals with leading organizations and startups across Pakistan, the Middle East, Australia and North America."
         }
       },
   "partners": {

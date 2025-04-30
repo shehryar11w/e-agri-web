@@ -202,7 +202,7 @@ const Contact = () => {
             {/* Phone Input */}
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {t('contact.form.phone')} <span className="text-red-500">*</span>
+              {t('contact.form.contact')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="tel"

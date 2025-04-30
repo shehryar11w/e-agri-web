@@ -293,7 +293,7 @@ const Features = () => {
         </motion.div>
 
         {/* Feature Carousel */}
-        <div className="relative h-auto max-h-[80vh] overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-xl mb-16">
+        <div className="relative mb-16 bg-white dark:bg-gray-800 rounded-2xl shadow-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -301,15 +301,15 @@ const Features = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col md:flex-row min-h-[400px]"
+              className="flex flex-col md:flex-row"
             >
               {/* Mockup Image */}
-              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-xl overflow-hidden">
-                <div className="w-full h-[250px] xs:h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] flex items-center justify-center">
+              <div className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 flex items-center justify-center bg-gray-50 dark:bg-gray-900/50 rounded-xl">
+                <div className="w-full flex items-center justify-center py-4">
                   <motion.img
                     src={MockupFeatures[currentSlide].mockup}
                     alt={MockupFeatures[currentSlide].title}
-                    className="w-full h-full object-contain drop-shadow-lg"
+                    className="w-full h-auto max-h-[40vh] md:max-h-[50vh] object-contain drop-shadow-lg"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -326,21 +326,21 @@ const Features = () => {
                   className="text-center md:text-left"
                 >
                   <motion.div 
-                    className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto md:mx-0 mb-4 sm:mb-6 flex items-center justify-center bg-gradient-to-br ${MockupFeatures[currentSlide].color} rounded-full text-white text-2xl sm:text-3xl shadow-lg`}
+                    className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto md:mx-0 mb-3 sm:mb-4 flex items-center justify-center bg-gradient-to-br ${MockupFeatures[currentSlide].color} rounded-full text-white text-2xl sm:text-3xl shadow-lg`}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
                     <img src={MockupFeatures[currentSlide].icon} alt={MockupFeatures[currentSlide].title} className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
                   </motion.div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                     {MockupFeatures[currentSlide].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 max-h-[20vh] md:max-h-none overflow-y-auto md:overflow-visible pr-2">
                     {MockupFeatures[currentSlide].description}
                   </p>
                   <motion.button 
-                    className="px-4 sm:px-6 py-2 border-2 m-4 border-brand text-brand rounded-full text-sm sm:text-base font-medium hover:bg-brand hover:text-white transition-all duration-300"
+                    className="px-4 sm:px-6 py-2 border-2 my-2 sm:m-4 border-brand text-brand rounded-full text-sm sm:text-base font-medium hover:bg-brand hover:text-white transition-all duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => openModal(MockupFeatures[currentSlide])}
@@ -355,19 +355,19 @@ const Features = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
           >
-            <FaChevronLeft className="text-sm sm:text-base" />
+            <FaChevronLeft className="text-xs sm:text-sm" />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-lg text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand transition-all duration-300 z-10"
           >
-            <FaChevronRight className="text-sm sm:text-base" />
+            <FaChevronRight className="text-xs sm:text-sm" />
           </button>
 
           {/* Slide Indicators */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-2 py-2">
             {MockupFeatures.map((_, index) => (
               <button
                 key={index}
